@@ -65,7 +65,7 @@ class Program
             Console.WriteLine("Both numbers are equally close to 20");
         }
 
-       // Program 4: Check if two numbers have the same parity (both even or both odd)
+    // Program 4: Check if two numbers have the same parity (both even or both odd)
 
        Console.WriteLine("Checking Parity of Two Numbers");
 
@@ -89,7 +89,7 @@ class Program
        {
            Console.WriteLine("Numbers have different parity");
        }
-        // Program 5: Determine whether a given number is positive, negative, or zero
+    // Program 5: Determine whether a given number is positive, negative, or zero
 
          Console.WriteLine("Checking if a Number is Positive, Negative, or Zero");
 
@@ -108,9 +108,21 @@ class Program
         {
             Consoe.WriteLine("The number is Zero");
         }
+    // Program 6: Check whether a year is a leap year or not
+        Console.WriteLine("Check if year inputted is a leap year or not");
+
+        Console.Write("Enter a Year: ");
+        int year = int.Parse(Console.Readline());
+
+        if ((year & 4 == 0 && year &&  100 != 0) || (year % 400 == 0))
+        {
+            Console.WriteLine("{year} is a leap year.");
+        }
+        else
+        {
+            Console.WriteLine("{year} is not a Leap year.");
+        }
     }
-    
-       // Program 6: Check whether a year is a leap year or not
        // Program 7: Check if a number falls in the range [10, 50] (inclusive) or outside it
        // Program 8: Find the second largest number among three given numbers
        // Program 9: Check if a number is positive, negative, or zero (using the ternary operator)
