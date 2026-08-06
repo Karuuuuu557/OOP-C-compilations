@@ -89,12 +89,27 @@ class Program
        {
            Console.WriteLine("Numbers have different parity");
        }
+        // Program 5: Determine whether a given number is positive, negative, or zero
 
+         Console.WriteLine("Checking if a Number is Positive, Negative, or Zero");
+
+         Console.Write("Enter a Number: ");
+         int num = int.Parse(Console.ReadLine());
+
+        if (num > 0)
+        {
+            Console.WriteLine("The number is Positive");
+        }
+        else if (num < 0)
+        {
+            Console.WriteLine("The number is Negative");
+        }
+        else
+        {
+            Consoe.WriteLine("The number is Zero");
+        }
     }
-
     
-
-       // Program 5: Determine whether a given number is positive, negative, or zero
        // Program 6: Check whether a year is a leap year or not
        // Program 7: Check if a number falls in the range [10, 50] (inclusive) or outside it
        // Program 8: Find the second largest number among three given numbers
