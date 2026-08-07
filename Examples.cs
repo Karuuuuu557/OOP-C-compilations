@@ -122,8 +122,24 @@ class Program
         {
             Console.WriteLine("{year} is not a Leap year.");
         }
+    // Program 7: Check if a number falls in the range [10, 50] (inclusive) or outside it
+    
+        Console.WriteLine("Check if a number falls in the range [10, 50] (inclusive) or outside it");
+
+        Console.Write("Enter a Number: ");
+        int rangeNum = int.Parse(Console.ReadLine());
+
+        if (rangeNum >= 10 && rangeNum <= 50)
+        {
+            Console.WriteLine($"{rangeNum} is within the range [10, 50]");
+        }
+        else
+        {
+            Console.WriteLine($"{rangeNum} is outside the range [10, 50]");
+        }
+    
     }
-       // Program 7: Check if a number falls in the range [10, 50] (inclusive) or outside it
+       
        // Program 8: Find the second largest number among three given numbers
        // Program 9: Check if a number is positive, negative, or zero (using the ternary operator)
        // Program 10: Check whether a given number is odd or even using the ternary operator
