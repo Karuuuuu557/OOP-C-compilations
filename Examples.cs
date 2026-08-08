@@ -137,10 +137,25 @@ class Program
         {
             Console.WriteLine($"{rangeNum} is outside the range [10, 50]");
         }
-    
+     // Program 8: Find the second largest number among three given numbers 
+        Console.WriteLine("Finddingt the second Largest number is a set of three numbers");
+
+        Console.Write("Enter Number 1: ");
+        int numA = int.Parse(Console.ReadLine());
+        Console.Write("Enter Number 2: ");
+        int numB = int.Parse(Console.ReadLine());
+        Console.Write("Enter Number 3: ");
+        int numC = int.Parse(Console.ReadLine());
+
+        int largest = Math.Max(numA, Math.Max(numB, numC));
+        int smallest = Math.Min(numA, Math.Min(numB, numC));
+
+        int secondLargest = (numA + numB + numC) - largest - smallest;//get the sum of the three numbers and subtract the largest and smallest to get the remaining which is the second largest number
+
+        Console.WriteLine($"The second largest number is: {secondLargest}");
     }
        
-       // Program 8: Find the second largest number among three given numbers
+       
        // Program 9: Check if a number is positive, negative, or zero (using the ternary operator)
        // Program 10: Check whether a given number is odd or even using the ternary operator
        // Program 11: Calculate the absolute difference between two numbers and check if it's less than a threshold
