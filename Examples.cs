@@ -153,6 +153,15 @@ class Program
         int secondLargest = (numA + numB + numC) - largest - smallest;//get the sum of the three numbers and subtract the largest and smallest to get the remaining which is the second largest number
 
         Console.WriteLine($"The second largest number is: {secondLargest}");
+
+       // Program 9: Check if a number is positive, negative, or zero (using the ternary operator)
+         Console.WriteLine("Checking if a Number is Positive, Negative, or Zero (using the ternary operator)");
+
+         Console.Write("Enter a Number: ");
+         int ternaryNum = int.Parse(Console.ReadLine());
+
+         string result = (ternaryNum > 0) ? "Postive" : (ternaryNum < 0) ? "Negative" : "Zero";
+         Console.WriteLine($"The number {ternaryNum} is {result}");
     }
        
        
