@@ -91,8 +91,10 @@ d.	A special symbol (anything else)
 c)	Displays the ASCII value of the character.*/
 
     Console.WriteLine("\nEnter a Single Character: ");
-    char oneChar = Console.ReadKey().KeyChar;
+    char oneChar = Console.ReadLine()[0];
 
-    
+
+
+
     }
 }
