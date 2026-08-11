@@ -88,7 +88,13 @@ a.	A capital letter (A–Z)
 b.	A small letter (a–z)
 c.	A digit (0–9)
 d.	A special symbol (anything else)
-c)	Displays the ASCII value of the character.*/
+c)	Displays the ASCII value of the character.
+
+ASCII Table Reference
+•	Capital letters A–Z → ASCII 65 to 90
+•	Small letters a–z → ASCII 97 to 122
+•	Digits 0–9 → ASCII 48 to 57
+•	Special symbols → all other values */
 
     Console.WriteLine("\nEnter a Single Character: ");
     char oneChar = Console.ReadLine()[0]; //char syntax must have [0] to get the first character of the string input
