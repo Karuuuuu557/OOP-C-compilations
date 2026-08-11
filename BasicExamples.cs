@@ -107,5 +107,41 @@ ASCII Table Reference
     Console.WriteLine($"The character '{oneChar}' is a {result}");
     Console.WriteLine($"ASCII Value: {Convert.ToInt32(oneChar)}");
 
+/* 4.	Write a C# program that:
+a)	Accepts a number from the user.
+b)	Uses math functions to compute and display:
+a.	Square root (Math.Sqrt)
+b.	Square and cube (Math.Pow)
+c.	Absolute value (Math.Abs)
+d.	Rounded value (Math.Round)
+e.	Sine, Cosine, Tangent (Math.Sin, Math.Cos, Math.Tan)*/
+
+    Console.WriteLine("\nEnter a Number: ");
+    double number = double.Parse(Console.ReadLine());
+//square root the number
+    double squareRoot = Math.Sqrt(number);
+//number input to the power of 2
+    double square = Math.Pow(number, 2);
+//number input to the power of 3
+    double cube = Math.Pow(number, 3);
+//the absolute value of the number
+    double absolute = Math.Abs(number);
+// Rounds the number to the nearest whole number
+    double roundedValue = Math.Round(number);
+ // Calculates the sine of the number in radians
+    double sine = Math.Sin(number);
+ // Calculates the cosine of the number in radians
+    double cosine = Math.Cos(number);
+ // Calculates the tangent of the number in radians
+    double tangent = Math.Tan(number);
+
+    Console.WriteLine($"The square root of {number} is: {squareRoot:F2}");
+    Console.WriteLine($"The square of {number} is: {square:F2}");
+    Console.WriteLine($"The cube of {number} is: {cube:F2}");
+    Console.WriteLine($"The absolute value of {number} is: {absolute}");
+    Console.WriteLine($"The rounded value of {number} is: {roundedValue}");
+    Console.WriteLine($"The sine of {number} is: {sine:F2}");
+    Console.WriteLine($"The cosine of {number} is: {cosine:F2}");
+    Console.WriteLine($"The tangent of {number} is: {tangent:F2}");
     }
 }
