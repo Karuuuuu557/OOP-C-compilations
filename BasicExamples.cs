@@ -91,10 +91,15 @@ d.	A special symbol (anything else)
 c)	Displays the ASCII value of the character.*/
 
     Console.WriteLine("\nEnter a Single Character: ");
-    char oneChar = Console.ReadLine()[0];
+    char oneChar = Console.ReadLine()[0]; //char syntax must have [0] to get the first character of the string input
+    
+    string result = (oneChar >= 'A' && oneChar <= 'Z') ? "Capital Letter" :
+                    (oneChar >= 'a' && oneChar <= 'z') ? "Small Letter" :
+                    (oneChar >= '0' && oneChar <= '9') ? "Digit" :
+                    "Special Symbol";
 
-
-
+    Console.WriteLine($"The character '{oneChar}' is a {result}");
+    Console.WriteLine($"ASCII Value: {Convert.ToInt32(oneChar)}");
 
     }
 }
