@@ -143,5 +143,27 @@ e.	Sine, Cosine, Tangent (Math.Sin, Math.Cos, Math.Tan)*/
     Console.WriteLine($"The sine of {number} is: {sine:F2}");
     Console.WriteLine($"The cosine of {number} is: {cosine:F2}");
     Console.WriteLine($"The tangent of {number} is: {tangent:F2}");
+
+/* 5.	Write a C# program that asks the user to enter a year.
+•	If divisible by 400 → Leap year
+•	Else if divisible by 100 → Not a leap year
+•	Else if divisible by 4 → Leap year
+•	Else → Not a leap year */
+
+Console.WriteLine("Check if year inputted is a leap year or not");
+
+        Console.Write("Enter a Year: ");
+        int year = int.Parse(Console.Readline());
+
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+        {
+            Console.WriteLine("{year} is a leap year.");
+        }
+        else
+        {
+            Console.WriteLine("{year} is not a Leap year.");
+        }
+
+
     }
 }
