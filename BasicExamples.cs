@@ -154,7 +154,7 @@ Console.WriteLine("Check if year inputted is a leap year or not");
 
         Console.Write("Enter a Year: ");
         int year = int.Parse(Console.Readline());
-
+//checks the year inputted checks the three criteria mentioned
         if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
         {
             Console.WriteLine("{year} is a leap year.");
@@ -163,7 +163,5 @@ Console.WriteLine("Check if year inputted is a leap year or not");
         {
             Console.WriteLine("{year} is not a Leap year.");
         }
-
-
     }
 }
