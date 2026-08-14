@@ -106,21 +106,21 @@ class Program
         }
         else
         {
-            Consoe.WriteLine("The number is Zero");
+            Console.WriteLine("The number is Zero");
         }
     // Program 6: Check whether a year is a leap year or not
         Console.WriteLine("Check if year inputted is a leap year or not");
 
         Console.Write("Enter a Year: ");
-        int year = int.Parse(Console.Readline());
+        int year = int.Parse(Console.ReadLine());
 
-        if ((year & 4 == 0 && year &&  100 != 0) || (year % 400 == 0))
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
         {
-            Console.WriteLine("{year} is a leap year.");
+            Console.WriteLine($"{year} is a leap year.");
         }
         else
         {
-            Console.WriteLine("{year} is not a Leap year.");
+            Console.WriteLine($"{year} is not a Leap year.");
         }
     // Program 7: Check if a number falls in the range [10, 50] (inclusive) or outside it
     
@@ -138,7 +138,7 @@ class Program
             Console.WriteLine($"{rangeNum} is outside the range [10, 50]");
         }
      // Program 8: Find the second largest number among three given numbers 
-        Console.WriteLine("Finddingt the second Largest number is a set of three numbers");
+        Console.WriteLine("Finding the second Largest number is a set of three numbers");
 
         Console.Write("Enter Number 1: ");
         int numA = int.Parse(Console.ReadLine());
@@ -162,10 +162,19 @@ class Program
 
          string result = (ternaryNum > 0) ? "Postive" : (ternaryNum < 0) ? "Negative" : "Zero";
          Console.WriteLine($"The number {ternaryNum} is {result}");
+
+    // Program 9: Check if a number is positive, negative, or zero (using the ternary operator)
+       Console.WriteLine("Enter a Number");
+       int Num = int.Parse(Console.ReadLine());
+
+       string result = (Num > 0) ? "Positive" : (Num < 0) ? "Negative" : "zero";
+            Console.WriteLine($"The number {Num} is: {result}");
+
     }
        
        
-       // Program 9: Check if a number is positive, negative, or zero (using the ternary operator)
+       
+
        // Program 10: Check whether a given number is odd or even using the ternary operator
        // Program 11: Calculate the absolute difference between two numbers and check if it's less than a threshold
        // Program 11: Calculate the absolute difference between two numbers and check if it's less than a threshold
