@@ -13,32 +13,33 @@ INSTRUCTIONS:
 6.	Calculate and Print the Sum of Array Elements
 7.	Reverse the Array
 */
-    static void Main()
+    static int[] myArray;
+    
+    static void GetArray()
     {
-        //ML 2 : Array
-    Console.WriteLine("Enter number of elements: ");
-    int size = int.Parse(Console.ReadLine());
+        Console.WriteLine("Enter the size of the array: ");
+        int size = int.Parse(Console.ReadLine());
 
-    int [] myArray = new int[size];
+        myArray = new int[size];
 
-    Console.WriteLine("Enter the elements of the array:");
-    for (int i = 0; i < size; i++)
-    {
-        Console.WriteLine($"Element {i + 1}: ");
-        myArray[i] = int.Parse(Console.ReadLine());
-    }
+        Console.WriteLine("Enter the elements of the array: ");
 
-
-// 1. Display the Elements
-    Console.WriteLine("\nOriginal Array");
-    PrintArray(myArray);
-    }
-
-    static void PrintArray(int[] arr)
-    {
-        foreach (int element in arr)
+        for (int i = 0; i < size; i++)
         {
-            Console.WriteLine(element);
+            Console.WriteLine($"Enter element {i + 1}: ");
+            myArray[i] = int.Parse(Console.ReadLine());
         }
+    }
+
+//1.	Display the Elements
+    static void displayElements(int[] arr)
+    {
+        Console.WriteLine("\nOriginal Array");
+        Console.WriteLine(string.Join(", ", arr)); //gets the arrays content and prints in one single line
+    }
+
+    static void accessFirstLast()
+    {
+        Console.WriteLine($"The first element is: {arr[0]}. The last element is {arr[arr.Length - 1]}");
     }
 }
