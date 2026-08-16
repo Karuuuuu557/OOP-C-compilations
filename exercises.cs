@@ -1,7 +1,7 @@
 //Comprehensive C# Exercises
 using System;
 
-class Program
+class Exercises
 {
     static void Main(string[] args)
     {
@@ -85,7 +85,8 @@ class Program
     static void PasswordVerification()
     {
         Console.WriteLine("\nProgram 5: Password Verification");
-        string correctPassword = "CSharp123";
+        Console.WriteLine("Set the correct password: ");
+        string correctPassword = Console.ReadLine();
         string password = "";
 
         while (password != correctPassword)
@@ -109,8 +110,13 @@ class Program
     static void NumberGuessingGame()
     {
         Console.WriteLine("\nProgram 6: Number Guessing Game");
+        Console.WriteLine("Enter minimum number: ");
+        int min = int.Parse(Console.ReadLine());
+        Console.WriteLine("Enter maximum number: ");
+        int max = int.Parse(Console.ReadLine());
+        
         Random random = new Random();
-        int secretNumber = random.Next(1, 101);
+        int secretNumber = random.Next(min, max + 1);
         int guess = -1;
 
         while (guess != secretNumber)
@@ -210,12 +216,13 @@ class Program
     static void ATMTransactionSimulator()
     {
         Console.WriteLine("\nProgram 10: ATM Transaction Simulator");
-        double balance = 10000;
+        Console.WriteLine("Enter initial balance: ");
+        double balance = double.Parse(Console.ReadLine());
         int choice = 0;
 
         do
         {
-            Console.WriteLine("===== ATM MENU =====");
+            Console.WriteLine("\n===== ATM MENU =====");
             Console.WriteLine("1. Check Balance");
             Console.WriteLine("2. Deposit");
             Console.WriteLine("3. Withdraw");
@@ -226,14 +233,14 @@ class Program
             switch (choice)
             {
                 case 1:
-                    Console.WriteLine("Your current balance is: ₱" + balance + "\n");
+                    Console.WriteLine("Your current balance is: Pesos " + balance + "\n");
                     break;
                 case 2:
                     Console.WriteLine("Enter amount to deposit: ");
                     double depositAmount = double.Parse(Console.ReadLine());
                     balance += depositAmount;
-                    Console.WriteLine("Successfully deposited ₱" + depositAmount);
-                    Console.WriteLine("Your new balance is: ₱" + balance + "\n");
+                    Console.WriteLine("Successfully deposited Pesos " + depositAmount);
+                    Console.WriteLine("Your new balance is: Pesos " + balance + "\n");
                     break;
                 case 3:
                     Console.WriteLine("Enter amount to withdraw: ");
@@ -241,13 +248,13 @@ class Program
                     
                     if (withdrawAmount > balance)
                     {
-                        Console.WriteLine("Insufficient balance! Your balance is only ₱" + balance + "\n");
+                        Console.WriteLine("Insufficient balance! Your balance is only Pesos " + balance + "\n");
                     }
                     else
                     {
                         balance -= withdrawAmount;
-                        Console.WriteLine("Successfully withdrew ₱" + withdrawAmount);
-                        Console.WriteLine("Your new balance is: ₱" + balance + "\n");
+                        Console.WriteLine("Successfully withdrew Pesos " + withdrawAmount);
+                        Console.WriteLine("Your new balance is: Pesos " + balance + "\n");
                     }
                     break;
                 case 4:
