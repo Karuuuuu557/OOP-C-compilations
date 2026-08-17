@@ -17,9 +17,23 @@ class Program
         ATMTransactionSimulator();
 
         //Array samples
+        GetArray();
+        displayElements();
+        accessFirstLast();
+        addElememt();
+        modifArray();
+        remArray();
+        calcArray();
+        revArray();
+
+        //General practice codes
+        swapNum();
+        greatestNum();
 
         // Program 1: swapping two numbers
-        Console.WriteLine("Swapping Two Numbers");      
+        static void swapNum()
+        {
+        Console.WriteLine("\nSwapping Two Numbers");      
         Console.WriteLine("Enter Number 1");
         int num1 = int.Parse(Console.ReadLine());
 
@@ -35,7 +49,10 @@ class Program
         Console.WriteLine("Number 2: " + num2);
 
         Console.WriteLine();
-
+        }
+        
+        static void greatestNum()
+        {
         // Program 2: finding the greatest number
         Console.WriteLine("Finding the Greatest Number");
 
@@ -52,8 +69,9 @@ class Program
         int smallest = Math.Min(a, Math.Min(b, c));
 
         Console.WriteLine($"The greatest number is: " + greatest );
-        Console.WriteLine($"The smallest number is: " + smallest );
-
+        Console.WriteLine($"The smallest number is: " + smallest );    
+        }
+        
         //program 3: check the nearest value of 20 of two given numbers
         Console.WriteLine("Finding the Nearest Value to 20");
 
@@ -453,6 +471,168 @@ class Program
                     break;
             }
         } while (choice != 4);
+        Console.WriteLine();
+    }
+    /*
+
+public static void Main(string[] args)
+{
+    // Step 1: User Input for Array Size and Elements
+    Console.WriteLine("Enter the size of the array:");
+    int size = int.Parse(Console.ReadLine());
+
+    int[] myArray = new int[size];
+
+    // Input the array elements from the user
+    Console.WriteLine("Enter the elements of the array:");
+    for (int i = 0; i < size; i++)
+    {
+        Console.Write($"Element {i + 1}: ");
+        myArray[i] = int.Parse(Console.ReadLine());
+    }
+
+    // Print the original array
+    Console.WriteLine("\nOriginal Array:");
+    PrintArray(myArray);
+}
+
+INSTRUCTIONS:
+1.	Display the Elements
+2.	Access Array Elements (First and Last)
+3.	Add an Element to the Array
+4.	Modify an Array Element 
+5.	Remove an Element from the Array
+6.	Calculate and Print the Sum of Array Elements
+7.	Reverse the Array
+
+*/
+    static int[] myArray;
+
+    static void GetArray()
+    {
+        Console.WriteLine("Enter the size of the array: ");
+        int size = int.Parse(Console.ReadLine());
+
+        myArray = new int[size];
+
+        Console.WriteLine("Enter the elements of the array: ");
+
+        for (int i = 0; i < size; i++)
+        {
+            Console.WriteLine($"Enter element {i + 1}: ");
+            myArray[i] = int.Parse(Console.ReadLine());
+        }
+    }
+
+//1.	Display the Elements
+    static void displayElements()
+    {
+        Console.WriteLine("\nProgram 1: Display the Elements");
+        Console.WriteLine("Original Array");
+        Console.WriteLine(string.Join(", ", myArray)); //gets the arrays content and prints in one single line
+        Console.WriteLine();
+    }
+
+//2.   Access the first and last array
+    static void accessFirstLast()
+    {
+        Console.WriteLine("\nProgram 2: Access First and Last Element");
+        Console.WriteLine($"The first element is: {myArray[0]}. The last element is {myArray[myArray.Length - 1]}");
+        Console.WriteLine();
+    }
+
+//3.   Add an element to the array
+    static void addElememt()
+    {
+        Console.WriteLine("\nProgram 3: Add an Element to the Array");
+        Console.WriteLine("Enter a number to add to the array: ");
+        int newElement = int.Parse(Console.ReadLine());
+
+        Array.Resize(ref myArray, myArray.Length + 1);
+        myArray[myArray.Length - 1] = newElement;
+        Console.WriteLine("Array after adding element: " + string.Join(", ", myArray));
+        Console.WriteLine();
+    }
+
+//4. modify an element to the array
+    static void modifArray()
+    {
+        Console.WriteLine("\nProgram 4: Modify an Array Element");
+        Console.WriteLine(string.Join(", ", myArray)); 
+        Console.WriteLine("Enter the index of the element you want to modify (1-based): ");
+        int index = int.Parse(Console.ReadLine()) - 1;
+
+        Console.WriteLine("Enter the new element:");
+        int newValue = int.Parse(Console.ReadLine());
+
+        if (index >= 0 && index < myArray.Length)
+        {
+            myArray[index] = newValue;
+            Console.WriteLine("Element modified successfully.");
+            Console.WriteLine("Updated array: " +  string.Join(", ", myArray));
+        }
+        else
+            {
+                Console.WriteLine("Invalid index!");
+            }
+        Console.WriteLine();
+    }
+//5. Remove an element from the array
+    static void remArray()
+    {
+        Console.WriteLine("\nProgram 5: Remove an Element from the Array");
+        Console.WriteLine(string.Join(", ", myArray));
+        Console.WriteLine("Enter the index of the element you want to remove (1-based): ");
+        int index = int.Parse(Console.ReadLine()) - 1;
+
+        if (index >= 0 && index < myArray.Length)
+        {
+            int[] tempArray = new int[myArray.Length - 1];
+            
+            for (int i = 0, j = 0; i < myArray.Length; i++)
+            {
+                if (i != index)
+                {
+                    tempArray[j] = myArray[i];
+                    j++;
+                }
+            }
+            
+            myArray = tempArray;
+            Console.WriteLine("Element removed successfully.");
+            Console.WriteLine("Updated array: " + string.Join(", ", myArray));
+        }
+        else
+        {
+            Console.WriteLine("Invalid index!");
+        }
+        Console.WriteLine();
+    }
+
+//6. Calculate and Print the Sum of Array Elements
+    static void calcArray()
+    {
+        Console.WriteLine("\nProgram 6: Calculate and Print the Sum");
+        Console.WriteLine(string.Join(", ", myArray));
+        
+        int sum = 0;
+        for (int i = 0; i < myArray.Length; i++)
+        {
+            sum += myArray[i];
+        }
+        
+        Console.WriteLine($"Sum of all elements: {sum}");
+        Console.WriteLine();
+    }
+//7.  Reverse the array
+    static void revArray()
+    {
+        Console.WriteLine("\nProgram 7: Reverse the Array");
+        Console.WriteLine("Original array: " + string.Join(", ", myArray));
+        
+        Array.Reverse(myArray);
+        
+        Console.WriteLine("Reversed array: " + string.Join(", ", myArray));
         Console.WriteLine();
     }
 }
