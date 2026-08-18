@@ -229,6 +229,7 @@ class Program
             string result = (ternaryNum > 0) ? "Positive" : (ternaryNum < 0) ? "Negative" : "Zero";
             Console.WriteLine($"The number {ternaryNum} is {result}");
             Console.WriteLine();
+            //ternary operators are shorter if-else version
         }
 
     }
