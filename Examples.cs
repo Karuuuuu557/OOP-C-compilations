@@ -29,178 +29,207 @@ class Program
         //General practice codes
         swapNum();
         greatestNum();
+        nearestValueTo20();
+        parityCheck();
+        positiveNegativeZero();
+        leapYearCheck();
+        rangeCheck();
+        secondLargestNumber();
+        ternaryNumberCheck();
 
         // Program 1: swapping two numbers
         static void swapNum()
         {
-        Console.WriteLine("\nSwapping Two Numbers");      
-        Console.WriteLine("Enter Number 1");
-        int num1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("\nSwapping Two Numbers");
+            Console.WriteLine("Enter Number 1");
+            int num1 = int.Parse(Console.ReadLine());
 
-        Console.WriteLine("Enter Number 2");
-        int num2 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter Number 2");
+            int num2 = int.Parse(Console.ReadLine());
 
-        int temp = num1;
-        num1 = num2;
-        num2 = temp;
+            int temp = num1;
+            num1 = num2;
+            num2 = temp;
 
-        Console.WriteLine("After Swapping:");
-        Console.WriteLine("Number 1: " + num1);
-        Console.WriteLine("Number 2: " + num2);
-
-        Console.WriteLine();
+            Console.WriteLine("After Swapping:");
+            Console.WriteLine("Number 1: " + num1);
+            Console.WriteLine("Number 2: " + num2);
+            Console.WriteLine();
         }
-        
+
         static void greatestNum()
         {
-        // Program 2: finding the greatest number
-        Console.WriteLine("Finding the Greatest Number");
+            // Program 2: finding the greatest number
+            Console.WriteLine("Finding the Greatest Number");
 
-        Console.Write("Enter Number 1: ");
-        int a = int.Parse(Console.ReadLine());
+            Console.Write("Enter Number 1: ");
+            int a = int.Parse(Console.ReadLine());
 
-        Console.Write("Enter Number 2: ");
-        int b = int.Parse(Console.ReadLine());
+            Console.Write("Enter Number 2: ");
+            int b = int.Parse(Console.ReadLine());
 
-        Console.Write("Enter Number 3: ");
-        int c = int.Parse(Console.ReadLine());
+            Console.Write("Enter Number 3: ");
+            int c = int.Parse(Console.ReadLine());
 
-        int greatest = Math.Max(a, Math.Max(b, c));
-        int smallest = Math.Min(a, Math.Min(b, c));
+            int greatest = Math.Max(a, Math.Max(b, c));
+            int smallest = Math.Min(a, Math.Min(b, c));
 
-        Console.WriteLine($"The greatest number is: " + greatest );
-        Console.WriteLine($"The smallest number is: " + smallest );    
+            Console.WriteLine("The greatest number is: " + greatest);
+            Console.WriteLine("The smallest number is: " + smallest);
+            Console.WriteLine();
         }
-        
-        //program 3: check the nearest value of 20 of two given numbers
-        Console.WriteLine("Finding the Nearest Value to 20");
 
-        Console.Write("Enter Number 1: ");
-        int n1 = int.Parse(Console.ReadLine());
-
-        Console.Write("Enter Number 2: ");
-        int n2 = int.Parse(Console.ReadLine());
-
-        int diff1 = Math.Abs(n1 - 20);
-        int diff2 = Math.Abs(n2 - 20);
-
-        if (diff1 < diff2)
+        static void nearestValueTo20()
         {
-            Console.WriteLine("Number 1 ("+ n1 +") is closer to 20");
+            //program 3: check the nearest value of 20 of two given numbers
+            Console.WriteLine("Finding the Nearest Value to 20");
+
+            Console.Write("Enter Number 1: ");
+            int n1 = int.Parse(Console.ReadLine());
+
+            Console.Write("Enter Number 2: ");
+            int n2 = int.Parse(Console.ReadLine());
+
+            int diff1 = Math.Abs(n1 - 20);
+            int diff2 = Math.Abs(n2 - 20);
+
+            if (diff1 < diff2)
+            {
+                Console.WriteLine("Number 1 (" + n1 + ") is closer to 20");
+            }
+            else if (diff2 < diff1)
+            {
+                Console.WriteLine("Number 2 (" + n2 + ") is closer to 20");
+            }
+            else
+            {
+                Console.WriteLine("Both numbers are equally close to 20");
+            }
+            Console.WriteLine();
         }
-        else if (diff2 < diff1)
+
+        static void parityCheck()
         {
-            Console.WriteLine("Number 2 ("+ n2 +") is closer to 20");
+            // Program 4: Check if two numbers have the same parity (both even or both odd)
+            Console.WriteLine("Checking Parity of Two Numbers");
+
+            Console.Write("Enter Number 1: ");
+            int p1 = int.Parse(Console.ReadLine());
+
+            Console.Write("Enter Number 2: ");
+            int p2 = int.Parse(Console.ReadLine());
+
+            string parity1 = (p1 % 2 == 0) ? "even" : "odd";
+            string parity2 = (p2 % 2 == 0) ? "even" : "odd";
+
+            Console.WriteLine($"Number 1 is {parity1}");
+            Console.WriteLine($"Number 2 is {parity2}");
+
+            if (parity1 == parity2)
+            {
+                Console.WriteLine($"Both numbers are {parity1}");
+            }
+            else
+            {
+                Console.WriteLine("Numbers have different parity");
+            }
+            Console.WriteLine();
         }
-        else
+
+        static void positiveNegativeZero()
         {
-            Console.WriteLine("Both numbers are equally close to 20");
+            // Program 5: Determine whether a given number is positive, negative, or zero
+            Console.WriteLine("Checking if a Number is Positive, Negative, or Zero");
+
+            Console.Write("Enter a Number: ");
+            int num = int.Parse(Console.ReadLine());
+
+            if (num > 0)
+            {
+                Console.WriteLine("The number is Positive");
+            }
+            else if (num < 0)
+            {
+                Console.WriteLine("The number is Negative");
+            }
+            else
+            {
+                Console.WriteLine("The number is Zero");
+            }
+            Console.WriteLine();
         }
 
-    // Program 4: Check if two numbers have the same parity (both even or both odd)
-
-       Console.WriteLine("Checking Parity of Two Numbers");
-
-       Console.Write("Enter Number 1: ");
-       int p1 = int.Parse(Console.ReadLine());
-
-       Console.Write("Enter Number 2: ");
-       int p2 = int.Parse(Console.ReadLine());
-
-       string parity1 = (p1 % 2 == 0) ? "even" : "odd";
-       string parity2 = (p2 % 2 == 0) ? "even" : "odd";
-
-       Console.WriteLine($"Number 1 is {parity1}");
-       Console.WriteLine($"Number 2 is {parity2}");
-
-       if (parity1 == parity2)
-       {
-           Console.WriteLine($"Both numbers are {parity1}");
-       }
-       else
-       {
-           Console.WriteLine("Numbers have different parity");
-       }
-    // Program 5: Determine whether a given number is positive, negative, or zero
-
-         Console.WriteLine("Checking if a Number is Positive, Negative, or Zero");
-
-         Console.Write("Enter a Number: ");
-         int num = int.Parse(Console.ReadLine());
-
-        if (num > 0)
+        static void leapYearCheck()
         {
-            Console.WriteLine("The number is Positive");
+            // Program 6: Check whether a year is a leap year or not
+            Console.WriteLine("Check if year inputted is a leap year or not");
+
+            Console.Write("Enter a Year: ");
+            int year = int.Parse(Console.ReadLine());
+
+            if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+            {
+                Console.WriteLine($"{year} is a leap year.");
+            }
+            else
+            {
+                Console.WriteLine($"{year} is not a Leap year.");
+            }
+            Console.WriteLine();
         }
-        else if (num < 0)
+
+        static void rangeCheck()
         {
-            Console.WriteLine("The number is Negative");
+            // Program 7: Check if a number falls in the range [10, 50] (inclusive) or outside it
+            Console.WriteLine("Check if a number falls in the range [10, 50] (inclusive) or outside it");
+
+            Console.Write("Enter a Number: ");
+            int rangeNum = int.Parse(Console.ReadLine());
+
+            if (rangeNum >= 10 && rangeNum <= 50)
+            {
+                Console.WriteLine($"{rangeNum} is within the range [10, 50]");
+            }
+            else
+            {
+                Console.WriteLine($"{rangeNum} is outside the range [10, 50]");
+            }
+            Console.WriteLine();
         }
-        else
+
+        static void secondLargestNumber()
         {
-            Console.WriteLine("The number is Zero");
+            // Program 8: Find the second largest number among three given numbers 
+            Console.WriteLine("Finding the second Largest number is a set of three numbers");
+
+            Console.Write("Enter Number 1: ");
+            int numA = int.Parse(Console.ReadLine());
+            Console.Write("Enter Number 2: ");
+            int numB = int.Parse(Console.ReadLine());
+            Console.Write("Enter Number 3: ");
+            int numC = int.Parse(Console.ReadLine());
+
+            int largest = Math.Max(numA, Math.Max(numB, numC));
+            int smallest = Math.Min(numA, Math.Min(numB, numC));
+
+            int secondLargest = (numA + numB + numC) - largest - smallest;
+
+            Console.WriteLine($"The second largest number is: {secondLargest}");
+            Console.WriteLine();
         }
-    // Program 6: Check whether a year is a leap year or not
-        Console.WriteLine("Check if year inputted is a leap year or not");
 
-        Console.Write("Enter a Year: ");
-        int year = int.Parse(Console.ReadLine());
-
-        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+        static void ternaryNumberCheck()
         {
-            Console.WriteLine($"{year} is a leap year.");
+            // Program 9: Check if a number is positive, negative, or zero (using the ternary operator)
+            Console.WriteLine("Checking if a Number is Positive, Negative, or Zero (using the ternary operator)");
+
+            Console.Write("Enter a Number: ");
+            int ternaryNum = int.Parse(Console.ReadLine());
+
+            string result = (ternaryNum > 0) ? "Positive" : (ternaryNum < 0) ? "Negative" : "Zero";
+            Console.WriteLine($"The number {ternaryNum} is {result}");
+            Console.WriteLine();
         }
-        else
-        {
-            Console.WriteLine($"{year} is not a Leap year.");
-        }
-    // Program 7: Check if a number falls in the range [10, 50] (inclusive) or outside it
-    
-        Console.WriteLine("Check if a number falls in the range [10, 50] (inclusive) or outside it");
-
-        Console.Write("Enter a Number: ");
-        int rangeNum = int.Parse(Console.ReadLine());
-
-        if (rangeNum >= 10 && rangeNum <= 50)
-        {
-            Console.WriteLine($"{rangeNum} is within the range [10, 50]");
-        }
-        else
-        {
-            Console.WriteLine($"{rangeNum} is outside the range [10, 50]");
-        }
-     // Program 8: Find the second largest number among three given numbers 
-        Console.WriteLine("Finding the second Largest number is a set of three numbers");
-
-        Console.Write("Enter Number 1: ");
-        int numA = int.Parse(Console.ReadLine());
-        Console.Write("Enter Number 2: ");
-        int numB = int.Parse(Console.ReadLine());
-        Console.Write("Enter Number 3: ");
-        int numC = int.Parse(Console.ReadLine());
-
-        int largest = Math.Max(numA, Math.Max(numB, numC));
-        int smallest = Math.Min(numA, Math.Min(numB, numC));
-
-        int secondLargest = (numA + numB + numC) - largest - smallest;//get the sum of the three numbers and subtract the largest and smallest to get the remaining which is the second largest number
-
-        Console.WriteLine($"The second largest number is: {secondLargest}");
-
-       // Program 9: Check if a number is positive, negative, or zero (using the ternary operator)
-         Console.WriteLine("Checking if a Number is Positive, Negative, or Zero (using the ternary operator)");
-
-         Console.Write("Enter a Number: ");
-         int ternaryNum = int.Parse(Console.ReadLine());
-
-         string result = (ternaryNum > 0) ? "Postive" : (ternaryNum < 0) ? "Negative" : "Zero";
-         Console.WriteLine($"The number {ternaryNum} is {result}");
-
-    // Program 9: Check if a number is positive, negative, or zero (using the ternary operator)
-       Console.WriteLine("Enter a Number");
-       int Num = int.Parse(Console.ReadLine());
-
-       string result = (Num > 0) ? "Positive" : (Num < 0) ? "Negative" : "zero";
-            Console.WriteLine($"The number {Num} is: {result}");
 
     }
        
