@@ -1,263 +1,309 @@
-//Comprehensive C# Exercises
 using System;
 
 class Program
 {
-    static void Main(string[] args)
+    // 1. User-defined function
+    static void Exercise1()
     {
-        DisplayEvenNumbers();
-        SumOfNumbers();
-        MultiplicationTable();
-        FactorialCalculator();
-        PasswordVerification();
-        NumberGuessingGame();
-        SimpleMenuSystem();
-        RightTrianglePattern();
-        NumberPattern();
-        ATMTransactionSimulator();
+        Console.WriteLine("Welcome Friends!");
+        Console.WriteLine("Have a nice day!");
+        Console.WriteLine();
     }
 
-    // 1. Display Even Numbers
-    static void DisplayEvenNumbers()
-    {
-        Console.WriteLine("\nProgram 1: Display Even Numbers");
-        Console.WriteLine("Enter limit: ");
-        int limit = int.Parse(Console.ReadLine());
 
-        Console.WriteLine("\nEven numbers from 1 to " + limit + ":");
-        for (int i = 2; i <= limit; i += 2)
+    // 2. User-defined function with parameters
+    static void WelcomeFriend(string name)
+    {
+        Console.WriteLine("Welcome friend " + name + " !");
+        Console.WriteLine("Have a nice day!");
+    }
+
+    static void Exercise2()
+    {
+        Console.Write("Please input a name : ");
+        string name = Console.ReadLine();
+
+        WelcomeFriend(name);
+        Console.WriteLine();
+    }
+
+
+    // 3. Sum of two numbers
+    static int SumNumbers(int a, int b)
+    {
+        return a + b;
+    }
+
+    static void Exercise3()
+    {
+        Console.Write("Enter a number: ");
+        int a = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter another number: ");
+        int b = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("The sum of two numbers is : " + SumNumbers(a, b));
+        Console.WriteLine();
+    }
+
+
+    // 4. Check if a number is prime
+    static bool IsPrime(int num)
+    {
+        if (num < 2)
+            return false;
+
+        for (int i = 2; i < num; i++)
         {
-            Console.Write(i + " ");
+            if (num % i == 0)
+                return false;
         }
-        Console.WriteLine("\n");
+
+        return true;
     }
 
-    // 2. Sum of Numbers
-    static void SumOfNumbers()
+    static void Exercise4()
     {
-        Console.WriteLine("\nProgram 2: Sum of Numbers");
-        Console.WriteLine("Enter N: ");
-        int n = int.Parse(Console.ReadLine());
+        Console.Write("Input a number : ");
+        int num = Convert.ToInt32(Console.ReadLine());
 
+        if (IsPrime(num))
+            Console.WriteLine(num + " is a prime number");
+        else
+            Console.WriteLine(num + " is not a prime number");
+
+        Console.WriteLine();
+    }
+
+
+    // 5. Convert lowercase letter to uppercase
+    static char ToUpperCase(char letter)
+    {
+        return char.ToUpper(letter);
+    }
+
+    static void Exercise5()
+    {
+        Console.Write("Input a Char : ");
+        char letter = Convert.ToChar(Console.ReadLine());
+
+        Console.WriteLine("Expected output : " + ToUpperCase(letter));
+        Console.WriteLine();
+    }
+
+
+    // 6. Find nearest value to 20
+    static int Near20(int a, int b)
+    {
+        if (a == b)
+            return 0;
+
+        if (Math.Abs(20 - a) < Math.Abs(20 - b))
+            return a;
+        else
+            return b;
+    }
+
+    static void Exercise6()
+    {
+        Console.Write("Input first integer: ");
+        int a = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Input second integer: ");
+        int b = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine(Near20(a, b));
+        Console.WriteLine();
+    }
+
+
+    // 7. Count spaces in a string
+    static int CountSpaces(string text)
+    {
+        int count = 0;
+
+        for (int i = 0; i < text.Length; i++)
+        {
+            if (text[i] == ' ')
+                count++;
+        }
+
+        return count;
+    }
+
+    static void Exercise7()
+    {
+        Console.Write("Please input a string : ");
+        string text = Console.ReadLine();
+
+        Console.WriteLine(
+            "\"" + text + "\" contains " +
+            CountSpaces(text) + " spaces"
+        );
+        Console.WriteLine();
+    }
+
+
+    // 8. Sum of elements in an array
+    static int SumArray(int[] numbers)
+    {
         int sum = 0;
-        for (int i = 1; i <= n; i++)
+
+        for (int i = 0; i < numbers.Length; i++)
         {
-            sum += i;
+            sum += numbers[i];
         }
 
-        Console.WriteLine("Sum = " + sum);
-        Console.WriteLine();
+        return sum;
     }
 
-    // 3. Multiplication Table
-    static void MultiplicationTable()
+    static void Exercise8()
     {
-        Console.WriteLine("\nProgram 3: Multiplication Table");
-        Console.WriteLine("Enter number: ");
-        int number = int.Parse(Console.ReadLine());
+        int[] numbers = new int[5];
 
-        Console.WriteLine();
-        for (int i = 1; i <= 10; i++)
+        for (int i = 0; i < 5; i++)
         {
-            Console.WriteLine(number + " x " + i + " = " + (number * i));
-        }
-        Console.WriteLine();
-    }
-
-    // 4. Factorial Calculator
-    static void FactorialCalculator()
-    {
-        Console.WriteLine("\nProgram 4: Factorial Calculator");
-        Console.WriteLine("Enter number: ");
-        int number = int.Parse(Console.ReadLine());
-
-        long factorial = 1;
-        for (int i = 1; i <= number; i++)
-        {
-            factorial *= i;
+            Console.Write("element - " + i + " : ");
+            numbers[i] = Convert.ToInt32(Console.ReadLine());
         }
 
-        Console.WriteLine(number + "! = " + factorial);
+        Console.WriteLine(
+            "The sum of the elements of the array is " +
+            SumArray(numbers)
+        );
         Console.WriteLine();
     }
 
-    // 5. Password Verification
-    static void PasswordVerification()
+
+    // 9. Swap two numbers
+    static void Swap(ref int a, ref int b)
     {
-        Console.WriteLine("\nProgram 5: Password Verification");
-        string correctPassword = "CSharp123";
-        string password = "";
+        int temp = a;
+        a = b;
+        b = temp;
+    }
 
-        while (password != correctPassword)
+    static void Exercise9()
+    {
+        Console.Write("Enter a number: ");
+        int a = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter another number: ");
+        int b = Convert.ToInt32(Console.ReadLine());
+
+        Swap(ref a, ref b);
+
+        Console.WriteLine(
+            "Now the 1st number is : " + a +
+            " , and the 2nd number is : " + b
+        );
+        Console.WriteLine();
+    }
+
+
+    // 10. Raise a number to a power
+    static int Power(int number, int exponent)
+    {
+        int result = 1;
+
+        for (int i = 0; i < exponent; i++)
         {
-            Console.WriteLine("Enter password: ");
-            password = Console.ReadLine();
-
-            if (password != correctPassword)
-            {
-                Console.WriteLine("Incorrect password.\n");
-            }
-            else
-            {
-                Console.WriteLine("Access Granted!");
-            }
+            result *= number;
         }
+
+        return result;
+    }
+
+    static void Exercise10()
+    {
+        Console.Write("Input Base number: ");
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Input the Exponent : ");
+        int exponent = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine(
+            "So, the number " + number +
+            " ^ (to the power) " + exponent +
+            " = " + Power(number, exponent)
+        );
         Console.WriteLine();
     }
 
-    // 6. Number Guessing Game
-    static void NumberGuessingGame()
+
+    // 11. Fibonacci sequence
+    static void Fibonacci(int n)
     {
-        Console.WriteLine("\nProgram 6: Number Guessing Game");
-        Random random = new Random();
-        int secretNumber = random.Next(1, 101);
-        int guess = -1;
+        int a = 0;
+        int b = 1;
 
-        while (guess != secretNumber)
+        for (int i = 0; i < n; i++)
         {
-            Console.WriteLine("Guess the number: ");
-            guess = int.Parse(Console.ReadLine());
+            Console.Write(a + " ");
 
-            if (guess > secretNumber)
-            {
-                Console.WriteLine("Too high!\n");
-            }
-            else if (guess < secretNumber)
-            {
-                Console.WriteLine("Too low!\n");
-            }
-            else
-            {
-                Console.WriteLine("Correct! You guessed the number.");
-            }
+            int next = a + b;
+            a = b;
+            b = next;
         }
-        Console.WriteLine();
     }
 
-    // 7. Simple Menu System
-    static void SimpleMenuSystem()
+    static void Exercise11()
     {
-        Console.WriteLine("\nProgram 7: Simple Menu System");
-        int choice = 0;
+        Console.Write("Input number of Fibonacci Series : ");
+        int n = Convert.ToInt32(Console.ReadLine());
 
-        do
-        {
-            Console.WriteLine("===== MENU =====");
-            Console.WriteLine("1. Say Hello");
-            Console.WriteLine("2. Display Date");
-            Console.WriteLine("3. Exit");
-            Console.WriteLine("Enter choice: ");
-            choice = int.Parse(Console.ReadLine());
+        Console.Write(
+            "The Fibonacci series of " + n +
+            " numbers is : "
+        );
 
-            switch (choice)
-            {
-                case 1:
-                    Console.WriteLine("Hello! Welcome to the menu system.\n");
-                    break;
-                case 2:
-                    Console.WriteLine("Current Date: " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "\n");
-                    break;
-                case 3:
-                    Console.WriteLine("Exiting...\n");
-                    break;
-                default:
-                    Console.WriteLine("Invalid choice! Try again.\n");
-                    break;
-            }
-        } while (choice != 3);
-        Console.WriteLine();
+        Fibonacci(n);
+    Console.WriteLine();
+    Console.WriteLine();
     }
 
-    // 8. Right Triangle Pattern
-    static void RightTrianglePattern()
-    {
-        Console.WriteLine("\nProgram 8: Right Triangle Pattern");
-        Console.WriteLine("Enter number of rows: ");
-        int rows = int.Parse(Console.ReadLine());
 
-        Console.WriteLine();
-        for (int i = 1; i <= rows; i++)
+    // 12. Sum of individual digits
+    static int SumDigits(int num)
+    {
+        int sum = 0;
+
+        while (num > 0)
         {
-            for (int j = 1; j <= i; j++)
-            {
-                Console.Write("*");
-            }
-            Console.WriteLine();
+            sum += num % 10;
+            num /= 10;
         }
+
+        return sum;
+    }
+
+    static void Exercise12()
+    {
+        Console.Write("Enter a number: ");
+        int num = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine(
+            "The sum of the digits of the number " +
+            num + " is : " + SumDigits(num)
+        );
         Console.WriteLine();
     }
 
-    // 9. Number Pattern
-    static void NumberPattern()
+
+    // MAIN
+    static void Main()
     {
-        Console.WriteLine("\nProgram 9: Number Pattern");
-        Console.WriteLine("Enter number of rows: ");
-        int rows = int.Parse(Console.ReadLine());
-
-        Console.WriteLine();
-        for (int i = 1; i <= rows; i++)
-        {
-            for (int j = 1; j <= i; j++)
-            {
-                Console.Write(j);
-            }
-            Console.WriteLine();
-        }
-        Console.WriteLine();
-    }
-
-    // 10. ATM Transaction Simulator
-    static void ATMTransactionSimulator()
-    {
-        Console.WriteLine("\nProgram 10: ATM Transaction Simulator");
-        double balance = 10000;
-        int choice = 0;
-
-        do
-        {
-            Console.WriteLine("===== ATM MENU =====");
-            Console.WriteLine("1. Check Balance");
-            Console.WriteLine("2. Deposit");
-            Console.WriteLine("3. Withdraw");
-            Console.WriteLine("4. Exit");
-            Console.WriteLine("Enter choice: ");
-            choice = int.Parse(Console.ReadLine());
-
-            switch (choice)
-            {
-                case 1:
-                    Console.WriteLine("Your current balance is: ₱" + balance + "\n");
-                    break;
-                case 2:
-                    Console.WriteLine("Enter amount to deposit: ");
-                    double depositAmount = double.Parse(Console.ReadLine());
-                    balance += depositAmount;
-                    Console.WriteLine("Successfully deposited ₱" + depositAmount);
-                    Console.WriteLine("Your new balance is: ₱" + balance + "\n");
-                    break;
-                case 3:
-                    Console.WriteLine("Enter amount to withdraw: ");
-                    double withdrawAmount = double.Parse(Console.ReadLine());
-                    
-                    if (withdrawAmount > balance)
-                    {
-                        Console.WriteLine("Insufficient balance! Your balance is only ₱" + balance + "\n");
-                    }
-                    else
-                    {
-                        balance -= withdrawAmount;
-                        Console.WriteLine("Successfully withdrew ₱" + withdrawAmount);
-                        Console.WriteLine("Your new balance is: ₱" + balance + "\n");
-                    }
-                    break;
-                case 4:
-                    Console.WriteLine("Thank you for using our ATM. Goodbye!\n");
-                    break;
-                default:
-                    Console.WriteLine("Invalid choice! Try again.\n");
-                    break;
-            }
-        } while (choice != 4);
-        Console.WriteLine();
+        Exercise1();
+        Exercise2();
+        Exercise3();
+        Exercise4();
+        Exercise5();
+        Exercise6();
+        Exercise7();
+        Exercise8();
+        Exercise9();
+        Exercise10();
+        Exercise11();
+        Exercise12();
     }
 }
