@@ -3,7 +3,7 @@ using System;
 class Program
 {
     // 1. User-defined function
-    static void Exercise1()
+    static void PrintWelcomeMessage()
     {
         Console.WriteLine("Welcome Friends!");
         Console.WriteLine("Have a nice day!");
@@ -18,7 +18,7 @@ class Program
         Console.WriteLine("Have a nice day!");
     }
 
-    static void Exercise2()
+    static void PrintPersonalizedWelcome()
     {
         Console.Write("Please input a name : ");
         string name = Console.ReadLine();
@@ -34,7 +34,7 @@ class Program
         return a + b;
     }
 
-    static void Exercise3()
+    static void CalculateAndDisplaySum()
     {
         Console.Write("Enter a number: ");
         int a = Convert.ToInt32(Console.ReadLine());
@@ -62,7 +62,7 @@ class Program
         return true;
     }
 
-    static void Exercise4()
+    static void CheckAndDisplayPrimeNumber()
     {
         Console.Write("Input a number : ");
         int num = Convert.ToInt32(Console.ReadLine());
@@ -82,7 +82,7 @@ class Program
         return char.ToUpper(letter);
     }
 
-    static void Exercise5()
+    static void ConvertAndDisplayUpperCase()
     {
         Console.Write("Input a Char : ");
         char letter = Convert.ToChar(Console.ReadLine());
@@ -104,7 +104,7 @@ class Program
             return b;
     }
 
-    static void Exercise6()
+    static void FindAndDisplayNearestTo20()
     {
         Console.Write("Input first integer: ");
         int a = Convert.ToInt32(Console.ReadLine());
@@ -131,7 +131,7 @@ class Program
         return count;
     }
 
-    static void Exercise7()
+    static void CountAndDisplaySpaces()
     {
         Console.Write("Please input a string : ");
         string text = Console.ReadLine();
@@ -157,7 +157,7 @@ class Program
         return sum;
     }
 
-    static void Exercise8()
+    static void CalculateAndDisplayArraySum()
     {
         int[] numbers = new int[5];
 
@@ -183,7 +183,7 @@ class Program
         b = temp;
     }
 
-    static void Exercise9()
+    static void SwapAndDisplayNumbers()
     {
         Console.Write("Enter a number: ");
         int a = Convert.ToInt32(Console.ReadLine());
@@ -214,7 +214,7 @@ class Program
         return result;
     }
 
-    static void Exercise10()
+    static void CalculateAndDisplayPower()
     {
         Console.Write("Input Base number: ");
         int number = Convert.ToInt32(Console.ReadLine());
@@ -247,7 +247,7 @@ class Program
         }
     }
 
-    static void Exercise11()
+    static void DisplayFibonacciSeries()
     {
         Console.Write("Input number of Fibonacci Series : ");
         int n = Convert.ToInt32(Console.ReadLine());
@@ -277,7 +277,7 @@ class Program
         return sum;
     }
 
-    static void Exercise12()
+    static void CalculateAndDisplayDigitSum()
     {
         Console.Write("Enter a number: ");
         int num = Convert.ToInt32(Console.ReadLine());
@@ -293,17 +293,17 @@ class Program
     // MAIN
     static void Main()
     {
-        Exercise1();
-        Exercise2();
-        Exercise3();
-        Exercise4();
-        Exercise5();
-        Exercise6();
-        Exercise7();
-        Exercise8();
-        Exercise9();
-        Exercise10();
-        Exercise11();
-        Exercise12();
+        PrintWelcomeMessage();
+        PrintPersonalizedWelcome();
+        CalculateAndDisplaySum();
+        CheckAndDisplayPrimeNumber();
+        ConvertAndDisplayUpperCase();
+        FindAndDisplayNearestTo20();
+        CountAndDisplaySpaces();
+        CalculateAndDisplayArraySum();
+        SwapAndDisplayNumbers();
+        CalculateAndDisplayPower();
+        DisplayFibonacciSeries();
+        CalculateAndDisplayDigitSum();
     }
 }
