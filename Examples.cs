@@ -49,6 +49,7 @@ class Program
         DisplayFibonacciSeries();
         CalculateAndDisplayDigitSum();
 
+        // these are general practice codes
         // Program 1: swapping two numbers
         static void swapNum()
         {
@@ -834,6 +835,7 @@ INSTRUCTIONS:
 7.	Reverse the Array
 
 */
+    // these are array examples
     static int[] myArray;
 
     static void GetArray()
