@@ -50,7 +50,7 @@ class Program
         CalculateAndDisplayDigitSum();
 
         // these are general practice codes
-        // Program 1: swapping two numbers
+        // General Examples Codes : Program 1
         static void swapNum()
         {
             Console.WriteLine("\nSwapping Two Numbers");
@@ -70,9 +70,9 @@ class Program
             Console.WriteLine();
         }
 
+        // General Examples Codes : Program 2
         static void greatestNum()
         {
-            // Program 2: finding the greatest number
             Console.WriteLine("Finding the Greatest Number");
 
             Console.Write("Enter Number 1: ");
@@ -92,9 +92,9 @@ class Program
             Console.WriteLine();
         }
 
+        // General Examples Codes : Program 3
         static void nearestValueTo20()
         {
-            //program 3: check the nearest value of 20 of two given numbers
             Console.WriteLine("Finding the Nearest Value to 20");
 
             Console.Write("Enter Number 1: ");
@@ -121,9 +121,9 @@ class Program
             Console.WriteLine();
         }
 
+        // General Examples Codes : Program 4
         static void parityCheck()
         {
-            // Program 4: Check if two numbers have the same parity (both even or both odd)
             Console.WriteLine("Checking Parity of Two Numbers");
 
             Console.Write("Enter Number 1: ");
@@ -149,9 +149,9 @@ class Program
             Console.WriteLine();
         }
 
+        // General Examples Codes : Program 5
         static void positiveNegativeZero()
         {
-            // Program 5: Determine whether a given number is positive, negative, or zero
             Console.WriteLine("Checking if a Number is Positive, Negative, or Zero");
 
             Console.Write("Enter a Number: ");
@@ -172,9 +172,9 @@ class Program
             Console.WriteLine();
         }
 
+        // General Examples Codes : Program 6
         static void leapYearCheck()
         {
-            // Program 6: Check whether a year is a leap year or not
             Console.WriteLine("Check if year inputted is a leap year or not");
 
             Console.Write("Enter a Year: ");
@@ -191,9 +191,9 @@ class Program
             Console.WriteLine();
         }
 
+        // General Examples Codes : Program 7
         static void rangeCheck()
         {
-            // Program 7: Check if a number falls in the range [10, 50] (inclusive) or outside it
             Console.WriteLine("Check if a number falls in the range [10, 50] (inclusive) or outside it");
 
             Console.Write("Enter a Number: ");
@@ -210,9 +210,9 @@ class Program
             Console.WriteLine();
         }
 
+        // General Examples Codes : Program 8
         static void secondLargestNumber()
         {
-            // Program 8: Find the second largest number among three given numbers 
             Console.WriteLine("Finding the second Largest number is a set of three numbers");
 
             Console.Write("Enter Number 1: ");
@@ -231,9 +231,9 @@ class Program
             Console.WriteLine();
         }
 
+        // General Examples Codes : Program 9
         static void ternaryNumberCheck()
         {
-            // Program 9: Check if a number is positive, negative, or zero (using the ternary operator)
             Console.WriteLine("Checking if a Number is Positive, Negative, or Zero (using the ternary operator)");
 
             Console.Write("Enter a Number: ");
@@ -244,8 +244,8 @@ class Program
             Console.WriteLine();
             //ternary operators are shorter if-else version
         }
-            // 1. User-defined function
-    static void PrintWelcomeMessage()
+        // General Examples Codes : Program 10
+        static void PrintWelcomeMessage()
     {
         Console.WriteLine("Welcome Friends!");
         Console.WriteLine("Have a nice day!");
@@ -253,13 +253,13 @@ class Program
     }
 
 
-    // 2. User-defined function with parameters
     static void WelcomeFriend(string name)
     {
         Console.WriteLine("Welcome friend " + name + " !");
         Console.WriteLine("Have a nice day!");
     }
 
+    // General Examples Codes : Program 11
     static void PrintPersonalizedWelcome()
     {
         Console.Write("Please input a name : ");
@@ -269,13 +269,12 @@ class Program
         Console.WriteLine();
     }
 
-
-    // 3. Sum of two numbers
     static int SumNumbers(int a, int b)
     {
         return a + b;
     }
 
+    // General Examples Codes : Program 12
     static void CalculateAndDisplaySum()
     {
         Console.Write("Enter a number: ");
@@ -288,8 +287,6 @@ class Program
         Console.WriteLine();
     }
 
-
-    // 4. Check if a number is prime
     static bool IsPrime(int num)
     {
         if (num < 2)
@@ -304,6 +301,7 @@ class Program
         return true;
     }
 
+    // General Examples Codes : Program 13
     static void CheckAndDisplayPrimeNumber()
     {
         Console.Write("Input a number : ");
@@ -317,13 +315,12 @@ class Program
         Console.WriteLine();
     }
 
-
-    // 5. Convert lowercase letter to uppercase
     static char ToUpperCase(char letter)
     {
         return char.ToUpper(letter);
     }
 
+    // General Examples Codes : Program 14
     static void ConvertAndDisplayUpperCase()
     {
         Console.Write("Input a Char : ");
@@ -333,8 +330,6 @@ class Program
         Console.WriteLine();
     }
 
-
-    // 6. Find nearest value to 20
     static int Near20(int a, int b)
     {
         if (a == b)
@@ -346,6 +341,7 @@ class Program
             return b;
     }
 
+    // General Examples Codes : Program 15
     static void FindAndDisplayNearestTo20()
     {
         Console.Write("Input first integer: ");
@@ -358,8 +354,6 @@ class Program
         Console.WriteLine();
     }
 
-
-    // 7. Count spaces in a string
     static int CountSpaces(string text)
     {
         int count = 0;
@@ -373,6 +367,7 @@ class Program
         return count;
     }
 
+    // General Examples Codes : Program 16
     static void CountAndDisplaySpaces()
     {
         Console.Write("Please input a string : ");
@@ -385,8 +380,6 @@ class Program
         Console.WriteLine();
     }
 
-
-    // 8. Sum of elements in an array
     static int SumArray(int[] numbers)
     {
         int sum = 0;
@@ -399,6 +392,7 @@ class Program
         return sum;
     }
 
+    // General Examples Codes : Program 17
     static void CalculateAndDisplayArraySum()
     {
         int[] numbers = new int[5];
@@ -416,8 +410,6 @@ class Program
         Console.WriteLine();
     }
 
-
-    // 9. Swap two numbers
     static void Swap(ref int a, ref int b)
     {
         int temp = a;
@@ -425,6 +417,7 @@ class Program
         b = temp;
     }
 
+    // General Examples Codes : Program 18
     static void SwapAndDisplayNumbers()
     {
         Console.Write("Enter a number: ");
@@ -442,8 +435,6 @@ class Program
         Console.WriteLine();
     }
 
-
-    // 10. Raise a number to a power
     static int Power(int number, int exponent)
     {
         int result = 1;
@@ -456,6 +447,7 @@ class Program
         return result;
     }
 
+    // General Examples Codes : Program 19
     static void CalculateAndDisplayPower()
     {
         Console.Write("Input Base number: ");
@@ -472,8 +464,6 @@ class Program
         Console.WriteLine();
     }
 
-
-    // 11. Fibonacci sequence
     static void Fibonacci(int n)
     {
         int a = 0;
@@ -489,6 +479,7 @@ class Program
         }
     }
 
+    // General Examples Codes : Program 20
     static void DisplayFibonacciSeries()
     {
         Console.Write("Input number of Fibonacci Series : ");
@@ -504,8 +495,6 @@ class Program
     Console.WriteLine();
     }
 
-
-    // 12. Sum of individual digits
     static int SumDigits(int num)
     {
         int sum = 0;
@@ -519,6 +508,7 @@ class Program
         return sum;
     }
 
+    // General Examples Codes : Program 21
     static void CalculateAndDisplayDigitSum()
     {
         Console.Write("Enter a number: ");
@@ -532,12 +522,7 @@ class Program
     }
 
     }
-       
-       
-       
-
        // Program 10: Check whether a given number is odd or even using the ternary operator
-       // Program 11: Calculate the absolute difference between two numbers and check if it's less than a threshold
        // Program 11: Calculate the absolute difference between two numbers and check if it's less than a threshold
        // Program 12: Check if a character is uppercase or lowercase (or neither)
        // Program 13: Determine whether two numbers are both positive, both negative, or have mixed signs
@@ -552,7 +537,7 @@ class Program
        //Comprehensive C# Exercises
 
 // these are looping examples
-    // 1. Display Even Numbers
+    // Looping : Program 1
     static void DisplayEvenNumbers()
     {
         Console.WriteLine("\nProgram 1: Display Even Numbers");
@@ -567,7 +552,7 @@ class Program
         Console.WriteLine("\n");
     }
 
-    // 2. Sum of Numbers
+    // Looping : Program 2
     static void SumOfNumbers()
     {
         Console.WriteLine("\nProgram 2: Sum of Numbers");
@@ -584,7 +569,7 @@ class Program
         Console.WriteLine();
     }
 
-    // 3. Multiplication Table
+    // Looping : Program 3
     static void MultiplicationTable()
     {
         Console.WriteLine("\nProgram 3: Multiplication Table");
@@ -599,7 +584,7 @@ class Program
         Console.WriteLine();
     }
 
-    // 4. Factorial Calculator
+    // Looping : Program 4
     static void FactorialCalculator()
     {
         Console.WriteLine("\nProgram 4: Factorial Calculator");
@@ -616,7 +601,7 @@ class Program
         Console.WriteLine();
     }
 
-    // 5. Password Verification
+    // Looping : Program 5
     static void PasswordVerification()
     {
         Console.WriteLine("\nProgram 5: Password Verification");
@@ -641,7 +626,7 @@ class Program
         Console.WriteLine();
     }
 
-    // 6. Number Guessing Game
+    // Looping : Program 6
     static void NumberGuessingGame()
     {
         Console.WriteLine("\nProgram 6: Number Guessing Game");
@@ -675,7 +660,7 @@ class Program
         Console.WriteLine();
     }
 
-    // 7. Simple Menu System
+    // Looping : Program 7
     static void SimpleMenuSystem()
     {
         Console.WriteLine("\nProgram 7: Simple Menu System");
@@ -709,7 +694,7 @@ class Program
         Console.WriteLine();
     }
 
-    // 8. Right Triangle Pattern
+    // Looping : Program 8
     static void RightTrianglePattern()
     {
         Console.WriteLine("\nProgram 8: Right Triangle Pattern");
@@ -728,7 +713,7 @@ class Program
         Console.WriteLine();
     }
 
-    // 9. Number Pattern
+    // Looping : Program 9
     static void NumberPattern()
     {
         Console.WriteLine("\nProgram 9: Number Pattern");
@@ -747,7 +732,7 @@ class Program
         Console.WriteLine();
     }
 
-    // 10. ATM Transaction Simulator
+    // Looping : Program 10
     static void ATMTransactionSimulator()
     {
         Console.WriteLine("\nProgram 10: ATM Transaction Simulator");
@@ -838,6 +823,7 @@ INSTRUCTIONS:
     // these are array examples
     static int[] myArray;
 
+    // Array : Program 1
     static void GetArray()
     {
         Console.WriteLine("Enter the size of the array: ");
@@ -854,7 +840,7 @@ INSTRUCTIONS:
         }
     }
 
-//1.	Display the Elements
+    // Array : Program 2
     static void displayElements()
     {
         Console.WriteLine("\nProgram 1: Display the Elements");
@@ -863,7 +849,7 @@ INSTRUCTIONS:
         Console.WriteLine();
     }
 
-//2.   Access the first and last array
+    // Array : Program 3
     static void accessFirstLast()
     {
         Console.WriteLine("\nProgram 2: Access First and Last Element");
@@ -871,7 +857,7 @@ INSTRUCTIONS:
         Console.WriteLine();
     }
 
-//3.   Add an element to the array
+    // Array : Program 4
     static void addElememt()
     {
         Console.WriteLine("\nProgram 3: Add an Element to the Array");
@@ -884,7 +870,7 @@ INSTRUCTIONS:
         Console.WriteLine();
     }
 
-//4. modify an element to the array
+    // Array : Program 5
     static void modifArray()
     {
         Console.WriteLine("\nProgram 4: Modify an Array Element");
@@ -907,7 +893,7 @@ INSTRUCTIONS:
             }
         Console.WriteLine();
     }
-//5. Remove an element from the array
+    // Array : Program 6
     static void remArray()
     {
         Console.WriteLine("\nProgram 5: Remove an Element from the Array");
@@ -939,7 +925,7 @@ INSTRUCTIONS:
         Console.WriteLine();
     }
 
-//6. Calculate and Print the Sum of Array Elements
+    // Array : Program 7
     static void calcArray()
     {
         Console.WriteLine("\nProgram 6: Calculate and Print the Sum");
@@ -954,7 +940,7 @@ INSTRUCTIONS:
         Console.WriteLine($"Sum of all elements: {sum}");
         Console.WriteLine();
     }
-//7.  Reverse the array
+    // Array : Program 8
     static void revArray()
     {
         Console.WriteLine("\nProgram 7: Reverse the Array");
