@@ -2,6 +2,40 @@ using System;
 
 namespace mybank
 {
+    // ==========================================
+    // RECTANGLE CALCULATOR
+    // ==========================================
+
+    public class Rectangle
+    {
+        public double length;
+        public double width;
+
+        public double calculateArea()
+        {
+            return length * width;
+        }
+
+        public double calculatePerimeter()
+        {
+            return 2 * (length + width);
+        }
+
+        public void displayResult()
+        {
+            Console.WriteLine("Length: " + length);
+            Console.WriteLine("Width: " + width);
+            Console.WriteLine("Area: " + calculateArea());
+            Console.WriteLine("Perimeter: " + calculatePerimeter());
+            Console.WriteLine();
+        }
+    }
+
+
+    // ==========================================
+    // BANK ACCOUNT
+    // ==========================================
+
     public class BankAccount
     {
         public String accountNumber;
@@ -14,23 +48,29 @@ namespace mybank
             accountNumber = "0000";
             accountName = "Unknown";
             balance = 0.0;
+
             Console.WriteLine("");
         }
 
-        // parametized constructor
+        // Parameterized constructor
         public BankAccount(String accNum, String accName, double bal)
         {
             accountNumber = accNum;
             accountName = accName;
             balance = bal;
+
             Console.WriteLine("");
         }
 
-
-		~BankAccount()
-		{
-   			 Console.WriteLine("BankAccount object (Account Number: " + accountNumber + ") is being getting trashed.");
-		}
+        // Destructor
+        ~BankAccount()
+        {
+            Console.WriteLine(
+                "BankAccount object (Account Number: "
+                + accountNumber
+                + ") is being getting trashed."
+            );
+        }
 
         public void displayAccount()
         {
@@ -43,6 +83,7 @@ namespace mybank
         public void deposit(double amount)
         {
             balance = balance + amount;
+
             Console.WriteLine("Deposit: " + amount.ToString("F2"));
         }
 
@@ -55,6 +96,7 @@ namespace mybank
             else
             {
                 balance = balance - amount;
+
                 Console.WriteLine("Withdraw: " + amount.ToString("F2"));
             }
         }
@@ -65,29 +107,81 @@ namespace mybank
         }
     }
 
+
+    // ==========================================
+    // MAIN PROGRAM
+    // ==========================================
+
     class Program
     {
         static void Main(string[] args)
         {
-            BankAccount account1 = new BankAccount("1001", "Juan Dela Cruz", 10000.00);
-            BankAccount account2 = new BankAccount("1002", "Maria Santos", 15000.00);
+            // ==========================================
+            // RECTANGLE CALCULATOR
+            // ==========================================
+
+            Rectangle r1 = new Rectangle();
+            r1.length = 10;
+            r1.width = 5;
+
+            Console.WriteLine("RECTANGLE 1");
+            r1.displayResult();
+
+
+            Rectangle r2 = new Rectangle();
+            r2.length = 15;
+            r2.width = 8;
+
+            Console.WriteLine("RECTANGLE 2");
+            r2.displayResult();
+
+
+            Rectangle r3 = new Rectangle();
+            r3.length = 20;
+            r3.width = 10;
+
+            Console.WriteLine("RECTANGLE 3");
+            r3.displayResult();
+
+
+            // ==========================================
+            // BANK ACCOUNT
+            // ==========================================
+
+            BankAccount account1 =
+                new BankAccount("1001", "Juan Dela Cruz", 10000.00);
+
+            BankAccount account2 =
+                new BankAccount("1002", "Maria Santos", 15000.00);
 
             Console.WriteLine("BANK ACCOUNT");
             Console.WriteLine();
 
             account1.displayAccount();
+
             account1.deposit(5000.00);
+
             account1.withdraw(999999);
-            Console.WriteLine("Updated Balance: " + account1.checkBalance().ToString("F2"));
+
+            Console.WriteLine(
+                "Updated Balance: "
+                + account1.checkBalance().ToString("F2")
+            );
+
             Console.WriteLine();
 
             account2.displayAccount();
-            account2.deposit(3000.00);
-            account2.withdraw(1000.00);
-            Console.WriteLine("Updated Balance: " + account2.checkBalance().ToString("F2"));
-            Console.WriteLine("");
 
-		
+            account2.deposit(3000.00);
+
+            account2.withdraw(1000.00);
+
+            Console.WriteLine(
+                "Updated Balance: "
+                + account2.checkBalance().ToString("F2")
+            );
+
+            Console.WriteLine("");
         }
-	}
+    }
 }
