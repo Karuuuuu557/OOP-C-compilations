@@ -1,9 +1,9 @@
 using System;
 
-namespace mybank
+namespace OOP_MachineProblems
 {
     // ==========================================
-    // RECTANGLE CALCULATOR
+    // MACHINE PROBLEM 4 - RECTANGLE CALCULATOR
     // ==========================================
 
     public class Rectangle
@@ -109,6 +109,34 @@ namespace mybank
 
 
     // ==========================================
+    // MACHINE PROBLEM 2 - PRODUCT INFORMATION
+    // ==========================================
+
+    public class Product
+    {
+        public string productName;
+        public string productCode;
+        public double price;
+        public int quantity;
+
+        public void displayProduct()
+        {
+            Console.WriteLine("Product Name: " + productName);
+            Console.WriteLine("Product Code: " + productCode);
+            Console.WriteLine("Price: " + price.ToString("F2"));
+            Console.WriteLine("Quantity: " + quantity);
+            Console.WriteLine("Total Value: " + calculateTotal().ToString("F2"));
+            Console.WriteLine();
+        }
+
+        public double calculateTotal()
+        {
+            return price * quantity;
+        }
+    }
+
+
+    // ==========================================
     // MAIN PROGRAM
     // ==========================================
 
@@ -124,21 +152,24 @@ namespace mybank
             r1.length = 10;
             r1.width = 5;
 
-            Console.WriteLine("RECTANGLE 1");
-            r1.displayResult();
-
-
             Rectangle r2 = new Rectangle();
             r2.length = 15;
             r2.width = 8;
 
-            Console.WriteLine("RECTANGLE 2");
-            r2.displayResult();
-
-
             Rectangle r3 = new Rectangle();
             r3.length = 20;
             r3.width = 10;
+
+            Console.WriteLine("==========================================");
+            Console.WriteLine("RECTANGLE CALCULATOR");
+            Console.WriteLine("==========================================");
+            Console.WriteLine();
+
+            Console.WriteLine("RECTANGLE 1");
+            r1.displayResult();
+
+            Console.WriteLine("RECTANGLE 2");
+            r2.displayResult();
 
             Console.WriteLine("RECTANGLE 3");
             r3.displayResult();
@@ -154,7 +185,9 @@ namespace mybank
             BankAccount account2 =
                 new BankAccount("1002", "Maria Santos", 15000.00);
 
+            Console.WriteLine("==========================================");
             Console.WriteLine("BANK ACCOUNT");
+            Console.WriteLine("==========================================");
             Console.WriteLine();
 
             account1.displayAccount();
@@ -181,7 +214,39 @@ namespace mybank
                 + account2.checkBalance().ToString("F2")
             );
 
-            Console.WriteLine("");
+            Console.WriteLine();
+
+
+            // ==========================================
+            // PRODUCT INFORMATION
+            // ==========================================
+
+            Product p1 = new Product();
+            p1.productName = "Laptop";
+            p1.productCode = "P001";
+            p1.price = 35000.00;
+            p1.quantity = 2;
+
+            Product p2 = new Product();
+            p2.productName = "Mouse";
+            p2.productCode = "P002";
+            p2.price = 1500.00;
+            p2.quantity = 3;
+
+            Product p3 = new Product();
+            p3.productName = "Keyboard";
+            p3.productCode = "P003";
+            p3.price = 2500.00;
+            p3.quantity = 2;
+
+            Console.WriteLine("==========================================");
+            Console.WriteLine("PRODUCT INFORMATION");
+            Console.WriteLine("==========================================");
+            Console.WriteLine();
+
+            p1.displayProduct();
+            p2.displayProduct();
+            p3.displayProduct();
         }
     }
 }
