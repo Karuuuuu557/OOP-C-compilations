@@ -3,6 +3,62 @@ using System;
 namespace OOP_MachineProblems
 {
     // ==========================================
+    // MACHINE PROBLEM 1 - STUDENT INFORMATION
+    // ==========================================
+
+    public class Student
+    {
+        public string name;
+        public string studentId;
+        public string course;
+        public int age;
+
+        public void displayInfo()
+        {
+            Console.WriteLine("Name: " + name);
+            Console.WriteLine("Student ID: " + studentId);
+            Console.WriteLine("Course: " + course);
+            Console.WriteLine("Age: " + age);
+            Console.WriteLine();
+        }
+
+        public void introduce()
+        {
+            Console.WriteLine("Hello! My name is " + name + ".");
+            Console.WriteLine();
+        }
+    }
+
+
+    // ==========================================
+    // MACHINE PROBLEM 2 - PRODUCT INFORMATION
+    // ==========================================
+
+    public class Product
+    {
+        public string productName;
+        public string productCode;
+        public double price;
+        public int quantity;
+
+        public void displayProduct()
+        {
+            Console.WriteLine("Product Name: " + productName);
+            Console.WriteLine("Product Code: " + productCode);
+            Console.WriteLine("Price: " + price.ToString("F2"));
+            Console.WriteLine("Quantity: " + quantity);
+            Console.WriteLine("Total Value: " + calculateTotal().ToString("F2"));
+            Console.WriteLine();
+        }
+
+        public double calculateTotal()
+        {
+            return price * quantity;
+        }
+    }
+
+
+    // ==========================================
     // MACHINE PROBLEM 4 - RECTANGLE CALCULATOR
     // ==========================================
 
@@ -109,34 +165,6 @@ namespace OOP_MachineProblems
 
 
     // ==========================================
-    // MACHINE PROBLEM 2 - PRODUCT INFORMATION
-    // ==========================================
-
-    public class Product
-    {
-        public string productName;
-        public string productCode;
-        public double price;
-        public int quantity;
-
-        public void displayProduct()
-        {
-            Console.WriteLine("Product Name: " + productName);
-            Console.WriteLine("Product Code: " + productCode);
-            Console.WriteLine("Price: " + price.ToString("F2"));
-            Console.WriteLine("Quantity: " + quantity);
-            Console.WriteLine("Total Value: " + calculateTotal().ToString("F2"));
-            Console.WriteLine();
-        }
-
-        public double calculateTotal()
-        {
-            return price * quantity;
-        }
-    }
-
-
-    // ==========================================
     // MAIN PROGRAM
     // ==========================================
 
@@ -145,7 +173,79 @@ namespace OOP_MachineProblems
         static void Main(string[] args)
         {
             // ==========================================
-            // RECTANGLE CALCULATOR
+            // MACHINE PROBLEM 1 - STUDENT INFORMATION
+            // ==========================================
+
+            Student s1 = new Student();
+            s1.name = "Juan Dela Cruz";
+            s1.studentId = "2026-001";
+            s1.course = "BSIT";
+            s1.age = 20;
+
+            Student s2 = new Student();
+            s2.name = "Maria Santos";
+            s2.studentId = "2026-002";
+            s2.course = "BSIT";
+            s2.age = 19;
+
+            Student s3 = new Student();
+            s3.name = "Pedro Reyes";
+            s3.studentId = "2026-003";
+            s3.course = "BSIT";
+            s3.age = 21;
+
+            Console.WriteLine("==========================================");
+            Console.WriteLine("STUDENT INFORMATION");
+            Console.WriteLine("==========================================");
+            Console.WriteLine();
+
+            Console.WriteLine("STUDENT 1");
+            s1.displayInfo();
+            s1.introduce();
+
+            Console.WriteLine("STUDENT 2");
+            s2.displayInfo();
+            s2.introduce();
+
+            Console.WriteLine("STUDENT 3");
+            s3.displayInfo();
+            s3.introduce();
+
+
+            // ==========================================
+            // MACHINE PROBLEM 2 - PRODUCT INFORMATION
+            // ==========================================
+
+            Product p1 = new Product();
+            p1.productName = "Laptop";
+            p1.productCode = "P001";
+            p1.price = 35000.00;
+            p1.quantity = 2;
+
+            Product p2 = new Product();
+            p2.productName = "Mouse";
+            p2.productCode = "P002";
+            p2.price = 1500.00;
+            p2.quantity = 3;
+
+            Product p3 = new Product();
+            p3.productName = "Keyboard";
+            p3.productCode = "P003";
+            p3.price = 2500.00;
+            p3.quantity = 2;
+
+            Console.WriteLine("==========================================");
+            Console.WriteLine("PRODUCT INFORMATION");
+            Console.WriteLine("==========================================");
+            Console.WriteLine();
+
+            p1.displayProduct();
+            p2.displayProduct();
+            p3.displayProduct();
+
+
+            // ==========================================
+            // MACHINE PROBLEM 4 - RECTANGLE CALCULATOR
             // ==========================================
 
             Rectangle r1 = new Rectangle();
@@ -215,38 +315,6 @@ namespace OOP_MachineProblems
             );
 
             Console.WriteLine();
-
-
-            // ==========================================
-            // PRODUCT INFORMATION
-            // ==========================================
-
-            Product p1 = new Product();
-            p1.productName = "Laptop";
-            p1.productCode = "P001";
-            p1.price = 35000.00;
-            p1.quantity = 2;
-
-            Product p2 = new Product();
-            p2.productName = "Mouse";
-            p2.productCode = "P002";
-            p2.price = 1500.00;
-            p2.quantity = 3;
-
-            Product p3 = new Product();
-            p3.productName = "Keyboard";
-            p3.productCode = "P003";
-            p3.price = 2500.00;
-            p3.quantity = 2;
-
-            Console.WriteLine("==========================================");
-            Console.WriteLine("PRODUCT INFORMATION");
-            Console.WriteLine("==========================================");
-            Console.WriteLine();
-
-            p1.displayProduct();
-            p2.displayProduct();
-            p3.displayProduct();
         }
     }
 }
