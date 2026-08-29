@@ -1,222 +1,186 @@
-    using System;
+using System;
 
-    class Program
+class Program
+{
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-    /* 1.	Write a C# program that asks the user to input the following details:
-    •	Full Name (string)
-    •	Age (integer)
-    •	Course (string)
-    •	Section (string)
-    Then, the program should:
-    a)	Display the inputted details in a formatted way.
-    b)	Show the length of the name (number of characters).
-    c)	Convert and display the name in uppercase and lowercase.*/
+        Console.WriteLine("=== C# Basic Exercises ===\n");
 
-            Console.WriteLine("Enter your full name: ");
-            string fName = Console.ReadLine();
+        PersonalDetailsExercise();
+        BmiCalculatorExercise();
+        CharacterCheckExercise();
+        MathFunctionsExercise();
+        LeapYearExercise();
+        ArithmeticExercise();
+        ArrayExercise();
+    }
 
-            Console.WriteLine("Enter your age: ");
-            int age = int.Parse(Console.ReadLine());
+    static void PersonalDetailsExercise()
+    {
+        Console.WriteLine("1) Personal Details");
+        Console.Write("Enter your full name: ");
+        string fullName = Console.ReadLine() ?? string.Empty;
 
-            Console.WriteLine("Enter your course: ");
-            string course = Console.ReadLine();
+        Console.Write("Enter your age: ");
+        int age = int.Parse(Console.ReadLine() ?? "0");
 
-            Console.WriteLine("Enter your section: ");
-            string section = Console.ReadLine();
+        Console.Write("Enter your course: ");
+        string course = Console.ReadLine() ?? string.Empty;
 
-    //Part (a) display the inputted details in a formatted way
+        Console.Write("Enter your section: ");
+        string section = Console.ReadLine() ?? string.Empty;
 
-            Console.WriteLine("\nFormatted Details:");
-            Console.WriteLine($"Full Name: {fName}");
-            Console.WriteLine($"Age: {age}");
-            Console.WriteLine($"Course: {course}");
-            Console.WriteLine($"Section: {section}");
+        Console.WriteLine("\nFormatted Details:");
+        Console.WriteLine($"Full Name: {fullName}");
+        Console.WriteLine($"Age: {age}");
+        Console.WriteLine($"Course: {course}");
+        Console.WriteLine($"Section: {section}");
 
-    //Part (b) show the length of the name (number of characters)
+        Console.WriteLine($"\nLength of the name: {fullName.Length} characters");
+        Console.WriteLine($"Name in Uppercase: {fullName.ToUpper()}");
+        Console.WriteLine($"Name in Lowercase: {fullName.ToLower()}");
+    }
 
-            int nameLength = fName.Length;
-            Console.WriteLine($"\nLength of the name: {nameLength} characters");
+    static void BmiCalculatorExercise()
+    {
+        Console.WriteLine("\n2) BMI Calculator");
+        Console.Write("Enter weight in kilograms: ");
+        double weight = double.Parse(Console.ReadLine() ?? "0");
 
-    //Part (c) convert and display the name in uppercase and lowercase
+        Console.Write("Enter height in centimeters: ");
+        int heightCm = int.Parse(Console.ReadLine() ?? "0");
 
-            string upperName = fName.ToUpper();
-            string lowerName = fName.ToLower();
+        double heightInMeters = heightCm / 100.0;
+        double bmi = weight / (heightInMeters * heightInMeters);
 
-            Console.WriteLine($"\nName in Uppercase: {upperName}");
-            Console.WriteLine($"Name in Lowercase: {lowerName}");
+        string category = bmi < 18.5 ? "Underweight" :
+                          bmi <= 24.9 ? "Normal" :
+                          bmi <= 29.9 ? "Overweight" :
+                          "Obese";
 
-    /* 2.	Write a C# program that:
-    1.	Asks the user to input their weight in kilograms (can be decimal).
-    2.	Asks the user to input their height in centimeters (integer).
-    3.	Converts the height from centimeters to meters.
-    4.	Computes the BMI using the formula:
-    BMI = weight / (height in meters)^2
-    
-    Displays the computed BMI and determines the category:
-    o	BMI < 18.5 → Underweight    
-    o	BMI 18.5 – 24.9 → Normal
-    o	BMI 25 – 29.9 → Overweight
-    o	BMI ≥ 30 → Obese */
-
-    // 1. Ask the user to input their weight in kilograms (can be decimal).
-        Console.WriteLine("\n Enter Weight in Kilograms (can include decimal): ");
-        double weight = double.Parse(Console.ReadLine());
-    // 2. Ask the user to input their height in centimeters (integer).
-        Console.WriteLine("Enter Height in Centimeters (integer): ");
-        int heightCm = int.Parse(Console.ReadLine());
-    // 3. Convert the height from centimeters to meters.
-        double heightM = heightCm / 100.0;
-    // 4. Compute the BMI using the formula: BMI = weight / (height in meters)^2
-        double BMI = weight / Math.Pow(heightM, 2);
-    // Display the computed BMI and determine the category
-        Console.WriteLine($"\nComputed BMI: {BMI:F2}");
-
-        string category = 
-        (BMI < 18.5) ? "Underweight" :
-        (BMI <= 24.9) ? "Normal" :
-        (BMI <= 29.9) ? "Overweight" : 
-        "Obese";
-
+        Console.WriteLine($"Computed BMI: {bmi:F2}");
         Console.WriteLine($"BMI Category: {category}");
+    }
 
-    /*3.	Write a C# program that:
-    a)	Asks the user to input a single character.
-    b)	Determines whether the character is:
-    a.	A capital letter (A–Z)
-    b.	A small letter (a–z)
-    c.	A digit (0–9)
-    d.	A special symbol (anything else)
-    c)	Displays the ASCII value of the character.
+    static void CharacterCheckExercise()
+    {
+        Console.WriteLine("\n3) Character Type Checker");
+        Console.Write("Enter a single character: ");
+        string input = Console.ReadLine() ?? string.Empty;
+        char character = input.Length > 0 ? input[0] : '\0';
 
-    ASCII Table Reference
-    •	Capital letters A–Z → ASCII 65 to 90
-    •	Small letters a–z → ASCII 97 to 122
-    •	Digits 0–9 → ASCII 48 to 57
-    •	Special symbols → all other values */
+        string result = character >= 'A' && character <= 'Z' ? "Capital Letter" :
+                       character >= 'a' && character <= 'z' ? "Small Letter" :
+                       character >= '0' && character <= '9' ? "Digit" :
+                       "Special Symbol";
 
-        Console.WriteLine("\nEnter a Single Character: ");
-        char oneChar = Console.ReadLine()[0]; //char syntax must have [0] to get the first character of the string input
-        
-        string result = (oneChar >= 'A' && oneChar <= 'Z') ? "Capital Letter" :
-                        (oneChar >= 'a' && oneChar <= 'z') ? "Small Letter" :
-                        (oneChar >= '0' && oneChar <= '9') ? "Digit" :
-                        "Special Symbol";
+        Console.WriteLine($"The character '{character}' is a {result}");
+        Console.WriteLine($"ASCII Value: {Convert.ToInt32(character)}");
+    }
 
-        Console.WriteLine($"The character '{oneChar}' is a {result}");
-        Console.WriteLine($"ASCII Value: {Convert.ToInt32(oneChar)}");
+    static void MathFunctionsExercise()
+    {
+        Console.WriteLine("\n4) Math Functions");
+        Console.Write("Enter a number: ");
+        double number = double.Parse(Console.ReadLine() ?? "0");
 
-    /* 4.	Write a C# program that:
-    a)	Accepts a number from the user.
-    b)	Uses math functions to compute and display:
-    a.	Square root (Math.Sqrt)
-    b.	Square and cube (Math.Pow)
-    c.	Absolute value (Math.Abs)
-    d.	Rounded value (Math.Round)
-    e.	Sine, Cosine, Tangent (Math.Sin, Math.Cos, Math.Tan)*/
-
-        Console.WriteLine("\nEnter a Number: ");
-        double number = double.Parse(Console.ReadLine());
-    //square root the number
         double squareRoot = Math.Sqrt(number);
-    //number input to the power of 2
         double square = Math.Pow(number, 2);
-    //number input to the power of 3
         double cube = Math.Pow(number, 3);
-    //the absolute value of the number
         double absolute = Math.Abs(number);
-    // Rounds the number to the nearest whole number
         double roundedValue = Math.Round(number);
-    // Calculates the sine of the number in radians
         double sine = Math.Sin(number);
-    // Calculates the cosine of the number in radians
         double cosine = Math.Cos(number);
-    // Calculates the tangent of the number in radians
         double tangent = Math.Tan(number);
 
-        Console.WriteLine($"The square root of {number} is: {squareRoot:F2}");
-        Console.WriteLine($"The square of {number} is: {square:F2}");
-        Console.WriteLine($"The cube of {number} is: {cube:F2}");
-        Console.WriteLine($"The absolute value of {number} is: {absolute}");
-        Console.WriteLine($"The rounded value of {number} is: {roundedValue}");
-        Console.WriteLine($"The sine of {number} is: {sine:F2}");
-        Console.WriteLine($"The cosine of {number} is: {cosine:F2}");
-        Console.WriteLine($"The tangent of {number} is: {tangent:F2}");
-
-    /* 5.	Write a C# program that asks the user to enter a year.
-    •	If divisible by 400 → Leap year
-    •	Else if divisible by 100 → Not a leap year
-    •	Else if divisible by 4 → Leap year
-    •	Else → Not a leap year */
-
-    Console.WriteLine("Check if year inputted is a leap year or not");
-
-            Console.Write("Enter a Year: ");
-            int year = int.Parse(Console.Readline());
-    //checks the year inputted checks the three criteria mentioned
-            if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
-            {
-                Console.WriteLine("{year} is a leap year.");
-            }
-            else
-            {
-                Console.WriteLine("{year} is not a Leap year.");
-            }
-
-/*6.	Write a C# Sharp program to print on screen the output of adding, subtracting, multiplying and dividing of two numbers which will be entered by the user.  
-Test Data:
-Input the first number: 25
-Input the second number: 4
-Expected Output:
-25 + 4 = 29
-25 - 4 = 21
-25 x 4 = 100 
-25 / 4 = 6
-25 mod 4 = 1
-*/
-    Console.WriteLine("Enter number 1: ");
-    int num1 = int.Parse(Console.Readline);
-
-    Console.WriteLine("Enter number 2: ");
-    int num2 = int.Parse(Console.ReadLine);
-
-    int add = num1 + num2;
-    int min = num1 - num2;
-    int mul = num1 * num2;
-    int dev = num1 / num2;
-    int mod = num1 % num2;
-
-    Console.WriteLine($"{num1} + {num2} is: {add}");
-    Console.WriteLine($"{num1} - {num2} is: {min}");
-    Console.WriteLine($"{num1} * {num2} is: {mul}");
-    Console.WriteLine($"{num1} / {num2} is: {dev}");
-    Console.WriteLine($"{num1} % {num2} is: {mod}");
-
-//ML 2 : Array
-    Console.WriteLine("Enter number of elements: ");
-    int size = int.Parse(Console.ReadLine());
-
-    int [] myArray = new int[size];
-
-    Console.WriteLine("Enter the elements of the array:");
-    for (int i = 0; i < size; i++);
-        {
-            Console.WriteLine($"Element {i + 1}: ");
-            myArray[i] = int.Parse(Console.ReadLine());
-        }
-/*
-1.	Display the Elements
-2.	Access Array Elements (First and Last)
-3.	Add an Element to the Array
-4.	Modify an Array Element 
-5.	Remove an Element from the Array
-6.	Calculate and Print the Sum of Array Elements
-7.	Reverse the Array
-*/
-
-// 1. Display the Elements
-    Console.WriteLine("\nOriginal Array");
-    PrintArray(myArray);
-        }
+        Console.WriteLine($"Square root: {squareRoot:F2}");
+        Console.WriteLine($"Square: {square:F2}");
+        Console.WriteLine($"Cube: {cube:F2}");
+        Console.WriteLine($"Absolute value: {absolute}");
+        Console.WriteLine($"Rounded value: {roundedValue}");
+        Console.WriteLine($"Sine: {sine:F2}");
+        Console.WriteLine($"Cosine: {cosine:F2}");
+        Console.WriteLine($"Tangent: {tangent:F2}");
     }
+
+    static void LeapYearExercise()
+    {
+        Console.WriteLine("\n5) Leap Year Checker");
+        Console.Write("Enter a year: ");
+        int year = int.Parse(Console.ReadLine() ?? "0");
+
+        bool isLeapYear = (year % 400 == 0) || (year % 4 == 0 && year % 100 != 0);
+        Console.WriteLine(isLeapYear ? $"{year} is a leap year." : $"{year} is not a leap year.");
+    }
+
+    static void ArithmeticExercise()
+    {
+        Console.WriteLine("\n6) Arithmetic Operations");
+        Console.Write("Enter number 1: ");
+        int num1 = int.Parse(Console.ReadLine() ?? "0");
+
+        Console.Write("Enter number 2: ");
+        int num2 = int.Parse(Console.ReadLine() ?? "0");
+
+        Console.WriteLine($"{num1} + {num2} = {num1 + num2}");
+        Console.WriteLine($"{num1} - {num2} = {num1 - num2}");
+        Console.WriteLine($"{num1} * {num2} = {num1 * num2}");
+        Console.WriteLine($"{num1} / {num2} = {num1 / num2}");
+        Console.WriteLine($"{num1} % {num2} = {num1 % num2}");
+    }
+
+    static void ArrayExercise()
+    {
+        Console.WriteLine("\n7) Array Exercise");
+        Console.Write("Enter number of elements: ");
+        int size = int.Parse(Console.ReadLine() ?? "0");
+
+        int[] numbers = new int[size];
+
+        Console.WriteLine("Enter the elements of the array:");
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            Console.Write($"Element {i + 1}: ");
+            numbers[i] = int.Parse(Console.ReadLine() ?? "0");
+        }
+
+        Console.WriteLine("\nOriginal Array:");
+        PrintArray(numbers);
+
+        Console.WriteLine($"\nFirst element: {numbers[0]}");
+        Console.WriteLine($"Last element: {numbers[numbers.Length - 1]}");
+
+        int sum = 0;
+        foreach (int value in numbers)
+        {
+            sum += value;
+        }
+
+        Console.WriteLine($"Sum of array elements: {sum}");
+
+        Console.WriteLine("\nReversed Array:");
+        PrintArray(ReverseArray(numbers));
+    }
+
+    static void PrintArray(int[] array)
+    {
+        foreach (int value in array)
+        {
+            Console.Write(value + " ");
+        }
+
+        Console.WriteLine();
+    }
+
+    static int[] ReverseArray(int[] array)
+    {
+        int[] reversed = new int[array.Length];
+
+        for (int i = 0; i < array.Length; i++)
+        {
+            reversed[i] = array[array.Length - 1 - i];
+        }
+
+        return reversed;
+    }
+}
