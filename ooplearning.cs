@@ -81,7 +81,7 @@ namespace StudentGradeandEnrollmentSystem
         }
     }
     
-    class schoolSystem
+    class SchoolSystem
     {
         static void Main(string[] args)
         {
