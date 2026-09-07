@@ -34,6 +34,22 @@ namespace StudentGradeandEnrollmentSystem
                 Console.WriteLine("Status: Failed");
             }
         }
+        public Student()
+        {
+            studentID = "UNDEFINED";
+            name = "UNDEFINED";
+            prelimGrade = 0;
+            midtermGrade = 0;
+            finalGrade = 0;
+        }
+        public Student(string studentID, string name, double prelimGrade, double midtermGrade, double finalGrade)
+        {
+            this.studentID = studentID;
+            this.name = name;
+            this.prelimGrade = prelimGrade;
+            this.midtermGrade = midtermGrade;
+            this.finalGrade = finalGrade;
+        }
     }
 
     class Course
@@ -86,19 +102,31 @@ namespace StudentGradeandEnrollmentSystem
         static void Main(string[] args)
         {
             Student student = new Student();
-            Course course = new Course();
-            Teacher teacher = new Teacher();
 
+            Student student2 = new Student();
             student.studentID = "2026-001";
             student.name = "Nica Tuazon";
             student.prelimGrade = 85;
             student.midtermGrade = 90;
             student.finalGrade = 88;
+            
+            Student student3 = new Student(
+                "2026-002", 
+                "Sherwin Cari", 
+                85, 
+                90, 
+                88
+            );
+
+
+            Course course = new Course();
 
             course.courseCode = "CS101";
             course.courseName = "Object Oriented Programming";
             course.units = 3;
             course.priceperUnit = 1500.0;
+
+            Teacher teacher = new Teacher();
 
             teacher.teacherID = "T-100";
             teacher.teacherName = "Abel Bucad";
@@ -111,7 +139,11 @@ namespace StudentGradeandEnrollmentSystem
 
             Console.WriteLine();
             student.DisplayStudentInfo();
-
+            Console.WriteLine();
+            student2.DisplayStudentInfo();
+            Console.WriteLine();
+            student3.DisplayStudentInfo();
+            
             Console.WriteLine();
             course.displayCourseInfo();
 
