@@ -104,11 +104,11 @@ namespace StudentGradeandEnrollmentSystem
             Student student = new Student();
 
             Student student2 = new Student();
-            student.studentID = "2026-001";
-            student.name = "Nica Tuazon";
-            student.prelimGrade = 85;
-            student.midtermGrade = 90;
-            student.finalGrade = 88;
+            student2.studentID = "2026-001";
+            student2.name = "Nica Tuazon";
+            student2.prelimGrade = 85;
+            student2.midtermGrade = 90;
+            student2.finalGrade = 88;
             
             Student student3 = new Student(
                 "2026-002", 
