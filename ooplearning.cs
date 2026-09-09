@@ -118,6 +118,13 @@ namespace StudentGradeandEnrollmentSystem
                 88
             );
 
+            Student student4 = new Student(
+                "2024-003",
+                "Hezekaiah Apolonio",
+                95,
+                96,
+                98
+            );
 
             Course course = new Course();
 
@@ -139,10 +146,15 @@ namespace StudentGradeandEnrollmentSystem
 
             Console.WriteLine();
             student.DisplayStudentInfo();
+
             Console.WriteLine();
             student2.DisplayStudentInfo();
+
             Console.WriteLine();
             student3.DisplayStudentInfo();
+            
+            Console.WriteLine();
+            student4.DisplayStudentInfo();
             
             Console.WriteLine();
             course.displayCourseInfo();
