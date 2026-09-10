@@ -95,6 +95,20 @@ namespace StudentGradeandEnrollmentSystem
             Console.WriteLine("Rate per Hour: " + ratePerHour);
             Console.WriteLine("Total Salary: " + calculateSalary());
         }
+        public Teacher()
+        {
+            teacherID = "UNDEFINED";
+            teacherName = "UNDEFINED";
+            hoursWorked = 0;
+            ratePerHour = 0;
+        }
+        public Teacher(string teacherID, string teacherName, int hoursWorked, double ratePerHour)
+        {
+            this.teacherID = teacherID;
+            this.teacherName = teacherName;
+            this.hoursWorked = hoursWorked;
+            this.ratePerHour = ratePerHour;
+        }
     }
     
     class SchoolSystem
@@ -134,6 +148,7 @@ namespace StudentGradeandEnrollmentSystem
             course.priceperUnit = 1500.0;
 
             Teacher teacher = new Teacher();
+            Teacher teacher2 = new Teacher();
 
             teacher.teacherID = "T-100";
             teacher.teacherName = "Abel Bucad";
@@ -161,6 +176,9 @@ namespace StudentGradeandEnrollmentSystem
 
             Console.WriteLine();
             teacher.displayTeacherInfo();
+
+            Console.WriteLine();
+            teacher2.displayTeacherInfo();
         }
     }
 }
