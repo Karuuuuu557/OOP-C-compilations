@@ -142,7 +142,7 @@ namespace StudentGradeandEnrollmentSystem
 
             Course course = new Course();
 
-            course.courseCode = "CS101";
+            course.courseCode = "CS1012";
             course.courseName = "Object Oriented Programming";
             course.units = 3;
             course.priceperUnit = 1500.0;
