@@ -140,6 +140,14 @@ namespace StudentGradeandEnrollmentSystem
                 98
             );
 
+            Student Student5 = new Student(
+                "2024-004",
+                "John Doe",
+                75,
+                80,
+                70
+            );
+
             Course course = new Course();
 
             course.courseCode = "CS1012";
@@ -170,6 +178,9 @@ namespace StudentGradeandEnrollmentSystem
             
             Console.WriteLine();
             student4.DisplayStudentInfo();
+            
+            Console.WriteLine();
+            Student5.DisplayStudentInfo();
             
             Console.WriteLine();
             course.displayCourseInfo();
