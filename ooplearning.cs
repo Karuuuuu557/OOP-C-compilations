@@ -163,6 +163,12 @@ namespace StudentGradeandEnrollmentSystem
             teacher.hoursWorked = 40;
             teacher.ratePerHour = 500;
 
+            Teacher teacher3 = new Teacher();
+            teacher3.teacherID = "T-101";
+            teacher3.teacherName = "Jane Smith";
+            teacher3.hoursWorked = 35;
+            teacher3.ratePerHour = 450;
+
             Console.WriteLine("=====================================");
             Console.WriteLine("STUDENT GRADE AND ENROLLMENT SYSTEM");
             Console.WriteLine("=====================================");
@@ -190,6 +196,9 @@ namespace StudentGradeandEnrollmentSystem
 
             Console.WriteLine();
             teacher2.displayTeacherInfo();
+
+            Console.WriteLine();
+            teacher3.displayTeacherInfo();
         }
     }
 }
