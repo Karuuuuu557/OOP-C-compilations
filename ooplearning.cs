@@ -27,13 +27,15 @@ namespace StudentGradeandEnrollmentSystem
 
             if (CalculateAverage() >= 75)
             {
-                Console.WriteLine("Status: Passed");
+                Console.WriteLine("Status: PASSED");
             }
             else
             {
-                Console.WriteLine("Status: Failed");
+                Console.WriteLine("Status: FAILED");
             }
         }
+
+        // Default constructor
         public Student()
         {
             studentID = "UNDEFINED";
@@ -42,6 +44,8 @@ namespace StudentGradeandEnrollmentSystem
             midtermGrade = 0;
             finalGrade = 0;
         }
+
+        // Parameterized constructor
         public Student(string studentID, string name, double prelimGrade, double midtermGrade, double finalGrade)
         {
             this.studentID = studentID;
@@ -73,6 +77,24 @@ namespace StudentGradeandEnrollmentSystem
             Console.WriteLine("Price per Unit: " + priceperUnit);
             Console.WriteLine("Total Tuition Fee: " + calculateTotalTuition());
         }
+
+        // Default constructor
+        public Course()
+        {
+            courseCode = "UNDEFINED";
+            courseName = "UNDEFINED";
+            units = 0;
+            priceperUnit = 0;
+        }
+
+        // Parameterized constructor
+        public Course(string courseCode, string courseName, int units, double priceperUnit)
+        {
+            this.courseCode = courseCode;
+            this.courseName = courseName;
+            this.units = units;
+            this.priceperUnit = priceperUnit;
+        }
     }
 
     class Teacher
@@ -86,6 +108,7 @@ namespace StudentGradeandEnrollmentSystem
         {
             return hoursWorked * ratePerHour;
         }
+
         public void displayTeacherInfo()
         {
             Console.WriteLine("TEACHER INFORMATION");
@@ -95,6 +118,8 @@ namespace StudentGradeandEnrollmentSystem
             Console.WriteLine("Rate per Hour: " + ratePerHour);
             Console.WriteLine("Total Salary: " + calculateSalary());
         }
+
+        // Default constructor
         public Teacher()
         {
             teacherID = "UNDEFINED";
@@ -102,6 +127,8 @@ namespace StudentGradeandEnrollmentSystem
             hoursWorked = 0;
             ratePerHour = 0;
         }
+
+        // Parameterized constructor
         public Teacher(string teacherID, string teacherName, int hoursWorked, double ratePerHour)
         {
             this.teacherID = teacherID;
@@ -110,11 +137,13 @@ namespace StudentGradeandEnrollmentSystem
             this.ratePerHour = ratePerHour;
         }
     }
-    
+
     class SchoolSystem
     {
         static void Main(string[] args)
         {
+            // STUDENTS
+
             Student student = new Student();
 
             Student student2 = new Student();
@@ -123,12 +152,12 @@ namespace StudentGradeandEnrollmentSystem
             student2.prelimGrade = 85;
             student2.midtermGrade = 90;
             student2.finalGrade = 88;
-            
+
             Student student3 = new Student(
-                "2026-002", 
-                "Sherwin Cari", 
-                85, 
-                90, 
+                "2026-002",
+                "Sherwin Cari",
+                85,
+                90,
                 88
             );
 
@@ -140,7 +169,7 @@ namespace StudentGradeandEnrollmentSystem
                 98
             );
 
-            Student Student5 = new Student(
+            Student student5 = new Student(
                 "2024-004",
                 "John Doe",
                 75,
@@ -148,14 +177,27 @@ namespace StudentGradeandEnrollmentSystem
                 70
             );
 
-            Course course = new Course();
+            // COURSES
 
-            course.courseCode = "CS1012";
-            course.courseName = "Object Oriented Programming";
-            course.units = 3;
-            course.priceperUnit = 1500.0;
+            Course course1 = new Course();
+            course1.courseCode = "CS1012";
+            course1.courseName = "Object Oriented Programming";
+            course1.units = 3;
+            course1.priceperUnit = 1500.0;
+
+            Course course2 = new Course();
+
+            Course course3 = new Course(
+                "CS1020",
+                "Data Structures and Algorithms",
+                4,
+                2000.0
+            );
+
+            // TEACHERS
 
             Teacher teacher = new Teacher();
+
             Teacher teacher2 = new Teacher();
 
             teacher.teacherID = "T-100";
@@ -164,40 +206,47 @@ namespace StudentGradeandEnrollmentSystem
             teacher.ratePerHour = 500;
 
             Teacher teacher3 = new Teacher();
+
             teacher3.teacherID = "T-101";
             teacher3.teacherName = "Jane Smith";
             teacher3.hoursWorked = 35;
             teacher3.ratePerHour = 450;
 
-            Console.WriteLine("=====================================");
+            // DISPLAY INFORMATION
+
             Console.WriteLine("STUDENT GRADE AND ENROLLMENT SYSTEM");
-            Console.WriteLine("=====================================");
-
             Console.WriteLine();
+
             student.DisplayStudentInfo();
-
             Console.WriteLine();
+
             student2.DisplayStudentInfo();
-
             Console.WriteLine();
+
             student3.DisplayStudentInfo();
-            
             Console.WriteLine();
+
             student4.DisplayStudentInfo();
-            
             Console.WriteLine();
-            Student5.DisplayStudentInfo();
-            
-            Console.WriteLine();
-            course.displayCourseInfo();
 
+            student5.DisplayStudentInfo();
             Console.WriteLine();
+
+            course1.displayCourseInfo();
+            Console.WriteLine();
+
+            course2.displayCourseInfo();
+            Console.WriteLine();
+
+            course3.displayCourseInfo();
+            Console.WriteLine();
+
             teacher.displayTeacherInfo();
-
             Console.WriteLine();
+
             teacher2.displayTeacherInfo();
-
             Console.WriteLine();
+
             teacher3.displayTeacherInfo();
         }
     }
