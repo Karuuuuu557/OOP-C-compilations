@@ -96,7 +96,7 @@ namespace StudentGradeandEnrollmentSystem
             this.priceperUnit = priceperUnit;
         }
     }
-
+//hello po sir, tao po ito hindi AI
     class Teacher
     {
         public string teacherID;
